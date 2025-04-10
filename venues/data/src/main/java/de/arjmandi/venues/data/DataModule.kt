@@ -1,4 +1,4 @@
-package de.arjmandi.venues.data.di
+package de.arjmandi.venues.data
 
 import de.arjmandi.venues.data.api.WoltApiService
 import de.arjmandi.venues.data.repository.VenueRepositoryImpl
