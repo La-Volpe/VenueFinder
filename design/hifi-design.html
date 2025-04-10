@@ -9,6 +9,7 @@
         body {
           background-color: #f5f5f5;
           padding-top: 56px; /* Add padding to account for fixed navbar */
+          padding-bottom: 56px; /* Add padding to account for bottom navbar */
         }
         .venue-card {
           border-radius: 1rem;
@@ -60,6 +61,23 @@
         .navbar {
           box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        .bottom-navbar {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+          z-index: 1000;
+        }
+        .nav-link.active {
+          font-weight: bold;
+          color: #0d6efd !important;
+        }
+        .tab-content {
+          display: none;
+        }
+        .tab-content.active {
+          display: block;
+        }
     </style>
 </head>
 <body>
@@ -71,45 +89,146 @@
 </nav>
 
 <div class="container mt-4">
-    <div id="venueList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    <!-- Home Tab Content -->
+    <div id="home-tab" class="tab-content active">
+        <div id="venueList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+    </div>
+
+    <!-- Favorites Tab Content -->
+    <div id="favorites-tab" class="tab-content">
+        <div id="favoritesList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+        <div id="noFavoritesMessage" class="col-12 text-center py-5" style="display: none;">
+            <p class="text-muted">No favorites yet. Like some venues to see them here!</p>
+        </div>
+    </div>
 </div>
 
+<!-- Bottom Navigation -->
+<nav class="navbar bg-light bottom-navbar">
+    <div class="container-fluid d-flex justify-content-around">
+        <a href="#" class="nav-link active" id="home-tab-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-link" id="favorites-tab-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>Favorites</span>
+        </a>
+    </div>
+</nav>
+
 <script>
-  let currentIndex = 0;
-  const venueList = document.getElementById('venueList');
-  const coordsBar = document.getElementById('coords');
-  const favorites = new Set();
-  let mockDataSets = [];
-  let rotationInterval;
+    let currentIndex = 0;
+    const venueList = document.getElementById('venueList');
+    const favoritesList = document.getElementById('favoritesList');
+    const noFavoritesMessage = document.getElementById('noFavoritesMessage');
+    const coordsBar = document.getElementById('coords');
+    const favorites = new Set();
 
-  // Load JSON data
-  async function loadData() {
-    try {
-      const response = await fetch('mapped-response.json');
-      if (!response.ok) {
-        throw new Error('Failed to load data');
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('Error loading venue data:', error);
-      coordsBar.textContent = "Error loading data";
-      return [];
+    // Load saved favorites from localStorage
+    const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    savedFavorites.forEach(id => favorites.add(id));
+
+    // Save favorites to localStorage whenever they change
+    function updateLocalStorageFavorites() {
+      localStorage.setItem('favorites', JSON.stringify([...favorites]));
     }
-  }
 
-  // Render venues
-  function renderVenues(data) {
-    if (!data || !data.venues) return;
-    
-    coordsBar.textContent = `📍 ${data.coords[0].toFixed(6)}, ${data.coords[1].toFixed(6)}`;
-    venueList.innerHTML = '';
-    
-    data.venues.slice(0, 15).forEach((venue, index) => {
-      const isFavorite = favorites.has(venue.id);
+    let mockDataSets = [];
+    let rotationInterval;
+    let allVenues = []; // Store all venues data
+
+    // Tab switching
+    document.getElementById('home-tab-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchTab('home');
+    });
+
+    document.getElementById('favorites-tab-link').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchTab('favorites');
+      renderFavorites();
+    });
+
+    function switchTab(tabName) {
+      // Update active tab styling
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      document.getElementById(`${tabName}-tab-link`).classList.add('active');
+      document.getElementById(`${tabName}-tab`).classList.add('active');
+    }
+
+    // Load JSON data
+    async function loadData() {
+      try {
+        const response = await fetch('mapped-response.json');
+        if (!response.ok) {
+          throw new Error('Failed to load data');
+        }
+        return await response.json();
+      } catch (error) {
+        console.error('Error loading venue data:', error);
+        coordsBar.textContent = "Error loading data";
+        return [];
+      }
+    }
+
+    // Render venues
+    function renderVenues(data) {
+      if (!data || !data.venues) return;
+
+      coordsBar.textContent = `📍 ${data.coords[0].toFixed(6)}, ${data.coords[1].toFixed(6)}`;
+      venueList.innerHTML = '';
+
+      data.venues.slice(0, 15).forEach((venue, index) => {
+        const isFavorite = favorites.has(venue.id);
+        const card = createVenueCard(venue, isFavorite);
+        venueList.appendChild(card);
+      });
+    }
+
+    // Render favorites
+    function renderFavorites() {
+      favoritesList.innerHTML = '';
+
+      if (favorites.size === 0) {
+        noFavoritesMessage.style.display = 'block';
+        return;
+      }
+
+      noFavoritesMessage.style.display = 'none';
+
+      const favoriteVenueMap = new Map();
+
+      mockDataSets.forEach(location => {
+        location.venues.forEach(venue => {
+          if (favorites.has(venue.id) && !favoriteVenueMap.has(venue.id)) {
+            favoriteVenueMap.set(venue.id, venue);
+          }
+        });
+      });
+
+      favoriteVenueMap.forEach(venue => {
+        const card = createVenueCard(venue, true);
+        favoritesList.appendChild(card);
+      });
+    }
+
+    // Create a venue card
+    function createVenueCard(venue, isFavorite) {
       const card = document.createElement('div');
       card.className = 'col fade-in';
-      card.style.animationDelay = `${index * 0.05}s`;
-      
+
       card.innerHTML = `
         <div class="card venue-card h-100">
           <img src="${venue.image_url}" class="venue-image" alt="${venue.name}" loading="lazy">
@@ -124,72 +243,77 @@
           </div>
         </div>
       `;
-      
-      venueList.appendChild(card);
-    });
 
-    // Add event listeners to heart buttons
-    document.querySelectorAll('.heart-icon').forEach(btn => {
-      btn.addEventListener('click', function() {
+      // Add event listener to heart button
+      const heartBtn = card.querySelector('.heart-icon');
+      heartBtn.addEventListener('click', function() {
         const venueId = this.getAttribute('data-id');
         const svg = this.querySelector('svg');
-        
+
         if (favorites.has(venueId)) {
           favorites.delete(venueId);
+          updateLocalStorageFavorites();
           svg.setAttribute('fill', 'none');
           svg.setAttribute('stroke', 'black');
           svg.setAttribute('stroke-width', '2');
         } else {
           favorites.add(venueId);
+          updateLocalStorageFavorites();
           svg.setAttribute('fill', 'red');
           svg.removeAttribute('stroke');
           svg.removeAttribute('stroke-width');
         }
+
+        // If we're on the favorites tab, re-render after like/unlike
+        if (document.getElementById('favorites-tab').classList.contains('active')) {
+          renderFavorites();
+        }
       });
+
+      return card;
+    }
+
+    // Update venues display
+    function updateVenues() {
+      if (mockDataSets.length === 0) return;
+      renderVenues(mockDataSets[currentIndex]);
+      currentIndex = (currentIndex + 1) % mockDataSets.length;
+    }
+
+    // Initialize the application
+    async function initApp() {
+      mockDataSets = await loadData();
+
+      if (mockDataSets.length > 0) {
+        updateVenues();
+        rotationInterval = setInterval(updateVenues, 10000);
+      } else {
+        venueList.innerHTML = `
+          <div class="col-12 text-center py-5">
+            <p class="text-muted">No venue data available. Please check your connection.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (mockDataSets.length === 0) return;
+
+      if (e.key === 'ArrowRight') {
+        clearInterval(rotationInterval);
+        updateVenues();
+        rotationInterval = setInterval(updateVenues, 10000);
+      } else if (e.key === 'ArrowLeft') {
+        clearInterval(rotationInterval);
+        currentIndex = (currentIndex - 2 + mockDataSets.length) % mockDataSets.length;
+        updateVenues();
+        rotationInterval = setInterval(updateVenues, 10000);
+      }
     });
-  }
 
-  // Update venues display
-  function updateVenues() {
-    if (mockDataSets.length === 0) return;
-    renderVenues(mockDataSets[currentIndex]);
-    currentIndex = (currentIndex + 1) % mockDataSets.length;
-  }
-
-  // Initialize the application
-  async function initApp() {
-    mockDataSets = await loadData();
-    
-    if (mockDataSets.length > 0) {
-      updateVenues();
-      rotationInterval = setInterval(updateVenues, 10000);
-    } else {
-      venueList.innerHTML = `
-        <div class="col-12 text-center py-5">
-          <p class="text-muted">No venue data available. Please check your connection.</p>
-        </div>
-      `;
-    }
-  }
-
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (mockDataSets.length === 0) return;
-    
-    if (e.key === 'ArrowRight') {
-      clearInterval(rotationInterval);
-      updateVenues();
-      rotationInterval = setInterval(updateVenues, 10000);
-    } else if (e.key === 'ArrowLeft') {
-      clearInterval(rotationInterval);
-      currentIndex = (currentIndex - 2 + mockDataSets.length) % mockDataSets.length;
-      updateVenues();
-      rotationInterval = setInterval(updateVenues, 10000);
-    }
-  });
-
-  // Start the application
-  document.addEventListener('DOMContentLoaded', initApp);
+    // Start the application
+    document.addEventListener('DOMContentLoaded', initApp);
 </script>
 </body>
 </html>
