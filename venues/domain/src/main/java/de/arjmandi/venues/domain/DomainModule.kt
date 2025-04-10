@@ -1,4 +1,4 @@
-package de.arjmandi.venues.domain.di
+package de.arjmandi.venues.domain
 
 import de.arjmandi.venues.domain.repository.VenueRepository
 import de.arjmandi.venues.domain.usecase.GetNearbyVenuesUseCase

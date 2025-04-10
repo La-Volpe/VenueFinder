@@ -12,7 +12,6 @@ import org.koin.dsl.module
 
 val dataModule =
     module {
-
         single {
             HttpClient(CIO) {
                 install(ContentNegotiation) {

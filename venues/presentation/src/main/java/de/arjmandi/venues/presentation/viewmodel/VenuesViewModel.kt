@@ -15,7 +15,8 @@ class VenuesViewModel(
     private val _uiState = MutableStateFlow<VenuesUiState>(VenuesUiState.Loading)
     val uiState: StateFlow<VenuesUiState> = _uiState
 
-    fun loadVenues(location: Location) {
+    fun loadVenues() {
+        val location = Location(60.169418, 24.931618)
         _uiState.value = VenuesUiState.Loading
         viewModelScope.launch {
             try {

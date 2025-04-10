@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ItemDto(
     @SerialName("venue")
-    val venue: VenueDto,
+    val venue: VenueDto? = null,
 )

@@ -13,6 +13,6 @@ class VenueRepositoryImpl(
         val response = api.getVenues(location.latitude, location.longitude)
         return response.sections
             .flatMap { it.items }
-            .map { it.venue.toDomain() }
+            .mapNotNull { it.venue?.toDomain() } // <- skip nulls safely
     }
 }

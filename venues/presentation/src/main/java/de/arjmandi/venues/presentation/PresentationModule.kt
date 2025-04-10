@@ -1,4 +1,4 @@
-package de.arjmandi.venues.presentation.di
+package de.arjmandi.venues.presentation
 
 import de.arjmandi.venues.presentation.viewmodel.VenuesViewModel
 import org.koin.core.module.dsl.viewModel
