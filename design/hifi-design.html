@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Helsinki Eats</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+          background-color: #f5f5f5;
+          padding-top: 56px; /* Add padding to account for fixed navbar */
+        }
+        .venue-card {
+          border-radius: 1rem;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+          overflow: hidden;
+          margin-bottom: 1.5rem;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .venue-card:hover {
+          transform: translateY(-5px);
+        }
+        .venue-image {
+          width: 100%;
+          height: 200px; /* Fixed height for consistency */
+          object-fit: cover;
+        }
+        .heart-icon {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          background: white;
+          border-radius: 50%;
+          padding: 0.4rem;
+          cursor: pointer;
+          z-index: 1;
+        }
+        .heart-icon svg {
+          width: 1.5rem;
+          height: 1.5rem;
+          transition: fill 0.2s ease;
+        }
+        .truncate {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .fade-in {
+          opacity: 0;
+          transform: translateY(10px);
+          animation: fadeInUp 0.5s forwards;
+        }
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .navbar {
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-light fixed-top">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1" id="coords">Loading location...</span>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div id="venueList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const venueList = document.getElementById('venueList');
+  const coordsBar = document.getElementById('coords');
+  const favorites = new Set();
+  let mockDataSets = [];
+  let rotationInterval;
+
+  // Load JSON data
+  async function loadData() {
+    try {
+      const response = await fetch('mapped-response.json');
+      if (!response.ok) {
+        throw new Error('Failed to load data');
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error loading venue data:', error);
+      coordsBar.textContent = "Error loading data";
+      return [];
+    }
+  }
+
+  // Render venues
+  function renderVenues(data) {
+    if (!data || !data.venues) return;
+    
+    coordsBar.textContent = `📍 ${data.coords[0].toFixed(6)}, ${data.coords[1].toFixed(6)}`;
+    venueList.innerHTML = '';
+    
+    data.venues.slice(0, 15).forEach((venue, index) => {
+      const isFavorite = favorites.has(venue.id);
+      const card = document.createElement('div');
+      card.className = 'col fade-in';
+      card.style.animationDelay = `${index * 0.05}s`;
+      
+      card.innerHTML = `
+        <div class="card venue-card h-100">
+          <img src="${venue.image_url}" class="venue-image" alt="${venue.name}" loading="lazy">
+          <button class="heart-icon border-0" data-id="${venue.id}">
+            <svg viewBox="0 0 24 24" ${isFavorite ? 'fill="red"' : 'fill="none" stroke="black" stroke-width="2"'}>
+              <path d="M12 21l-1-1C5 15 2 12 2 8a5 5 0 019-3 5 5 0 019 3c0 4-3 7-9 12l-1 1z"/>
+            </svg>
+          </button>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">${venue.name}</h5>
+            <p class="card-text text-muted truncate">${venue.short_description}</p>
+          </div>
+        </div>
+      `;
+      
+      venueList.appendChild(card);
+    });
+
+    // Add event listeners to heart buttons
+    document.querySelectorAll('.heart-icon').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const venueId = this.getAttribute('data-id');
+        const svg = this.querySelector('svg');
+        
+        if (favorites.has(venueId)) {
+          favorites.delete(venueId);
+          svg.setAttribute('fill', 'none');
+          svg.setAttribute('stroke', 'black');
+          svg.setAttribute('stroke-width', '2');
+        } else {
+          favorites.add(venueId);
+          svg.setAttribute('fill', 'red');
+          svg.removeAttribute('stroke');
+          svg.removeAttribute('stroke-width');
+        }
+      });
+    });
+  }
+
+  // Update venues display
+  function updateVenues() {
+    if (mockDataSets.length === 0) return;
+    renderVenues(mockDataSets[currentIndex]);
+    currentIndex = (currentIndex + 1) % mockDataSets.length;
+  }
+
+  // Initialize the application
+  async function initApp() {
+    mockDataSets = await loadData();
+    
+    if (mockDataSets.length > 0) {
+      updateVenues();
+      rotationInterval = setInterval(updateVenues, 10000);
+    } else {
+      venueList.innerHTML = `
+        <div class="col-12 text-center py-5">
+          <p class="text-muted">No venue data available. Please check your connection.</p>
+        </div>
+      `;
+    }
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (mockDataSets.length === 0) return;
+    
+    if (e.key === 'ArrowRight') {
+      clearInterval(rotationInterval);
+      updateVenues();
+      rotationInterval = setInterval(updateVenues, 10000);
+    } else if (e.key === 'ArrowLeft') {
+      clearInterval(rotationInterval);
+      currentIndex = (currentIndex - 2 + mockDataSets.length) % mockDataSets.length;
+      updateVenues();
+      rotationInterval = setInterval(updateVenues, 10000);
+    }
+  });
+
+  // Start the application
+  document.addEventListener('DOMContentLoaded', initApp);
+</script>
+</body>
+</html>
