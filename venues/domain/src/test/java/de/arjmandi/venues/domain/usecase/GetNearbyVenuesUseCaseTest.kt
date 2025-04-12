@@ -1,9 +1,8 @@
-package de.arjmandi.venues.domain
+package de.arjmandi.venues.domain.usecase
 
 import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.domain.model.Venue
 import de.arjmandi.venues.domain.repository.VenueRepository
-import de.arjmandi.venues.domain.usecase.GetNearbyVenuesUseCase
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
