@@ -13,7 +13,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.loadVenues()
         setContent {
             VenuesTheme {
                 VenuesScreen(viewModel = viewModel)

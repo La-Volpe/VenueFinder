@@ -5,7 +5,8 @@ import de.arjmandi.venues.domain.model.Location
 sealed interface LocationListLoadingState {
     data object Loading : LocationListLoadingState
 
-    data class Loaded(
+    data class Success(
+        val name: String,
         val locations: List<Location>,
     ) : LocationListLoadingState
 
