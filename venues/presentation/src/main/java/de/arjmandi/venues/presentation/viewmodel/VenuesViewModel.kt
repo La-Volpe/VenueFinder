@@ -1,3 +1,4 @@
+
 package de.arjmandi.venues.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
@@ -36,6 +37,9 @@ class VenuesViewModel(
     private val _cityChangedState = MutableStateFlow(defaultCityName)
     val cityChangedState: StateFlow<String> = _cityChangedState
 
+    private val _displayedLocation = MutableStateFlow<Location?>(null)
+    val displayedLocation: StateFlow<Location?> = _displayedLocation
+
     val currentLocation: StateFlow<Location?> =
         combine(
             locationsListState,
@@ -49,7 +53,6 @@ class VenuesViewModel(
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), null)
 
     init {
-        // Observe city changes to load supported cities
         viewModelScope.launch {
             cityChangedState.collectLatest { cityName ->
                 loadSupportedCities(cityName)
@@ -57,16 +60,15 @@ class VenuesViewModel(
             }
         }
 
-        // Automatically load venues whenever the current location changes
         viewModelScope.launch {
             currentLocation.collectLatest { location ->
                 if (location != null) {
+                    _uiState.value = VenuesUiState.Loading
                     loadVenues(location)
                 }
             }
         }
 
-        // Start location looper for periodic updates
         observeLocationLooper()
     }
 
@@ -94,7 +96,7 @@ class VenuesViewModel(
     private fun observeLocationLooper() {
         viewModelScope.launch {
             while (true) {
-                delay(10_000) // Wait for 10 seconds before auto-switching to the next location
+                delay(10_000)
                 updateToNextLocation()
             }
         }
@@ -116,6 +118,7 @@ class VenuesViewModel(
             try {
                 val venues = getNearbyVenues(location)
                 _uiState.value = VenuesUiState.Success(venues)
+                _displayedLocation.value = location
             } catch (e: Exception) {
                 _uiState.value = VenuesUiState.Error(e.message ?: "Failed to load venues.")
             } finally {
