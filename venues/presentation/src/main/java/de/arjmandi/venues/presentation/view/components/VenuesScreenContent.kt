@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -47,6 +46,8 @@ fun VenuesScreenContent(
     uiState: VenuesUiState,
     currentLocation: Location?,
     modifier: Modifier = Modifier,
+    favorites: Set<String> = emptySet(),
+    onFavoriteToggle: (String) -> Unit = {},
 ) {
     val locationName by remember(currentLocation) {
         derivedStateOf {
@@ -115,6 +116,8 @@ fun VenuesScreenContent(
                             AnimatedVenueList(
                                 venues = targetState.venues,
                                 modifier = Modifier.fillMaxSize(),
+                                favorites = favorites,
+                                onFavoriteToggle = onFavoriteToggle,
                             )
                         }
                     }
@@ -140,6 +143,8 @@ fun VenuesScreenContent(
 private fun AnimatedVenueList(
     venues: List<Venue>,
     modifier: Modifier = Modifier,
+    favorites: Set<String> = emptySet(),
+    onFavoriteToggle: (String) -> Unit,
 ) {
     val listState = rememberLazyListState()
 
@@ -159,11 +164,12 @@ private fun AnimatedVenueList(
                 visible = true,
                 enter = fadeIn() + slideInVertically(),
                 exit = fadeOut() + slideOutVertically(),
-                modifier = Modifier.animateItemPlacement(),
+                modifier = Modifier.animateItem(),
             ) {
                 VenueCard(
                     venue = venue,
-                    modifier = Modifier.fillMaxWidth(),
+                    isFavorite = venue.id in favorites,
+                    onFavoriteToggle = onFavoriteToggle,
                 )
             }
         }

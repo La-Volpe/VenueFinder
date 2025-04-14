@@ -35,7 +35,6 @@ fun VenueCard(
     venue: Venue,
     isFavorite: Boolean = false,
     onFavoriteToggle: (String) -> Unit = {},
-    modifier: Modifier = Modifier,
 ) {
     Card(
         modifier =

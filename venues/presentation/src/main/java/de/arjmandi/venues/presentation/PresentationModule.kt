@@ -6,5 +6,5 @@ import org.koin.dsl.module
 
 val presentationModule =
     module {
-        viewModel { VenuesViewModel(get(), get(), "Helsinki") }
+        viewModel { VenuesViewModel(get(), get(), get(), "Helsinki") }
     }

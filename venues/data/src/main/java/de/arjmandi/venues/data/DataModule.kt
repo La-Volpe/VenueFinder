@@ -1,7 +1,11 @@
 package de.arjmandi.venues.data
 
+import androidx.room.Room
 import de.arjmandi.venues.data.api.WoltApiService
+import de.arjmandi.venues.data.database.AppDatabase
+import de.arjmandi.venues.data.repository.FavoriteVenueRepositoryImpl
 import de.arjmandi.venues.data.repository.VenueRepositoryImpl
+import de.arjmandi.venues.domain.repository.FavoriteVenueRepository
 import de.arjmandi.venues.domain.repository.VenueRepository
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
@@ -30,4 +34,11 @@ val dataModule =
         single<VenueRepository> {
             VenueRepositoryImpl(get())
         }
+
+        single {
+            Room.databaseBuilder(get(), AppDatabase::class.java, "favorite-venues").build()
+        }
+
+        single { get<AppDatabase>().favoriteVenueDao() }
+        single<FavoriteVenueRepository> { FavoriteVenueRepositoryImpl(get()) }
     }

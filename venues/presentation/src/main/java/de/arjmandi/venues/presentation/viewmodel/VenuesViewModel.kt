@@ -4,6 +4,7 @@ package de.arjmandi.venues.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import de.arjmandi.venues.domain.model.Location
+import de.arjmandi.venues.domain.usecase.FavoriteVenuesUseCase
 import de.arjmandi.venues.domain.usecase.GetNearbyVenuesUseCase
 import de.arjmandi.venues.domain.usecase.GetSupportedCitiesUseCase
 import de.arjmandi.venues.presentation.model.LocationListLoadingState
@@ -20,9 +21,14 @@ import kotlinx.coroutines.launch
 class VenuesViewModel(
     private val getNearbyVenues: GetNearbyVenuesUseCase,
     private val getSupportedCitiesUseCase: GetSupportedCitiesUseCase,
+    private val favoriteVenuesUseCase: FavoriteVenuesUseCase,
     private val defaultCityName: String,
 ) : ViewModel() {
     val changeLocationDelay = 10_000L
+
+    private val _favoriteVenueIds = MutableStateFlow<Set<String>>(emptySet())
+    val favoriteVenueIds: StateFlow<Set<String>> = _favoriteVenueIds
+
     private val _uiState = MutableStateFlow<VenuesUiState>(VenuesUiState.Loading)
     val uiState: StateFlow<VenuesUiState> = _uiState
 
@@ -60,7 +66,6 @@ class VenuesViewModel(
                 resetIndex()
             }
         }
-
         viewModelScope.launch {
             currentLocation.collectLatest { location ->
                 if (location != null) {
@@ -125,6 +130,19 @@ class VenuesViewModel(
             } finally {
                 _isLoadingNext.value = false
             }
+        }
+    }
+
+    fun loadFavorites() {
+        viewModelScope.launch {
+            _favoriteVenueIds.value = favoriteVenuesUseCase.getFavorites()
+        }
+    }
+
+    fun toggleFavorite(venueId: String) {
+        viewModelScope.launch {
+            favoriteVenuesUseCase.toggleFavorite(venueId)
+            loadFavorites()
         }
     }
 }
