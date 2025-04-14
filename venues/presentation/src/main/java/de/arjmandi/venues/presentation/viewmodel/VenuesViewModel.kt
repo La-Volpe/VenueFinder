@@ -25,6 +25,7 @@ class VenuesViewModel(
     private val defaultCityName: String,
 ) : ViewModel() {
     val changeLocationDelay = 10_000L
+    private val loopingStarted = false
 
     private val _favoriteVenueIds = MutableStateFlow<Set<String>>(emptySet())
     val favoriteVenueIds: StateFlow<Set<String>> = _favoriteVenueIds
@@ -73,8 +74,6 @@ class VenuesViewModel(
                 }
             }
         }
-
-        observeLocationLooper()
     }
 
     private fun resetIndex() {
@@ -119,6 +118,9 @@ class VenuesViewModel(
 
     private fun loadVenues(location: Location) {
         viewModelScope.launch {
+            loopingStarted.takeIf { !it }?.let {
+                observeLocationLooper()
+            }
             _isLoadingNext.value = true
             _uiState.value = VenuesUiState.Loading
             try {
