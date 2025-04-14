@@ -19,7 +19,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -53,7 +52,7 @@ fun VenuesScreenContent(
         derivedStateOf {
             when (uiState) {
                 is VenuesUiState.Success -> {
-                    "📍 $currentLocation"
+                    "📍 ${currentLocation?.displayName}"
                 }
                 is VenuesUiState.Error -> "📍 Error location"
                 VenuesUiState.Loading -> "📍 Loading location..."
@@ -69,11 +68,15 @@ fun VenuesScreenContent(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(
-                        text = locationName,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                    )
+                    when (uiState) {
+                        VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
+                        else ->
+                            Text(
+                                text = locationName,
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                    }
                 },
             )
         },
@@ -100,7 +103,7 @@ fun VenuesScreenContent(
                                 modifier = Modifier.fillMaxSize(),
                                 contentAlignment = Alignment.TopCenter,
                             ) {
-                                CircularProgressIndicator()
+                                ShimmerVenueList()
                             }
                         }
                     }

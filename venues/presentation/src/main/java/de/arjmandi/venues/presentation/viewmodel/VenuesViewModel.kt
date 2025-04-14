@@ -69,7 +69,6 @@ class VenuesViewModel(
         viewModelScope.launch {
             currentLocation.collectLatest { location ->
                 if (location != null) {
-                    _uiState.value = VenuesUiState.Loading
                     loadVenues(location)
                 }
             }
@@ -119,8 +118,9 @@ class VenuesViewModel(
     }
 
     private fun loadVenues(location: Location) {
-        _isLoadingNext.value = true
         viewModelScope.launch {
+            _isLoadingNext.value = true
+            _uiState.value = VenuesUiState.Loading
             try {
                 val venues = getNearbyVenues(location)
                 _uiState.value = VenuesUiState.Success(venues)

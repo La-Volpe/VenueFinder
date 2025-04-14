@@ -11,7 +11,7 @@ import de.arjmandi.venues.presentation.viewmodel.VenuesViewModel
 @Composable
 fun VenuesScreen(viewModel: VenuesViewModel) {
     val uiState by viewModel.uiState.collectAsState()
-    val currentLocation by viewModel.currentLocation.collectAsState()
+    val currentLocation by viewModel.displayedLocation.collectAsState()
     val favoriteListState by viewModel.favoriteVenueIds.collectAsState()
 
     LaunchedEffect(favoriteListState) {
