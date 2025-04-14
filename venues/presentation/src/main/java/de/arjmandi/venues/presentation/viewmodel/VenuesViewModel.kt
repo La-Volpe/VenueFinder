@@ -22,6 +22,7 @@ class VenuesViewModel(
     private val getSupportedCitiesUseCase: GetSupportedCitiesUseCase,
     private val defaultCityName: String,
 ) : ViewModel() {
+    val changeLocationDelay = 10_000L
     private val _uiState = MutableStateFlow<VenuesUiState>(VenuesUiState.Loading)
     val uiState: StateFlow<VenuesUiState> = _uiState
 
@@ -96,7 +97,7 @@ class VenuesViewModel(
     private fun observeLocationLooper() {
         viewModelScope.launch {
             while (true) {
-                delay(10_000)
+                delay(changeLocationDelay)
                 updateToNextLocation()
             }
         }

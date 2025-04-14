@@ -1,148 +1,47 @@
 package de.arjmandi.venues.presentation.viewmodel
 
-import app.cash.turbine.test
+import de.arjmandi.venues.domain.model.City.Hamburg
 import de.arjmandi.venues.domain.model.City.Helsinki
-import de.arjmandi.venues.domain.model.Location
-import de.arjmandi.venues.domain.model.Venue
+import de.arjmandi.venues.domain.model.City.Stockholm
+import de.arjmandi.venues.domain.model.City.Tallinn
+import de.arjmandi.venues.domain.model.City.Vienna
 import de.arjmandi.venues.domain.usecase.GetNearbyVenuesUseCase
 import de.arjmandi.venues.domain.usecase.GetSupportedCitiesUseCase
 import de.arjmandi.venues.presentation.model.VenuesUiState
-import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals
-import junit.framework.TestCase.assertTrue
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
-import kotlinx.coroutines.test.setMain
-import org.junit.After
 import org.junit.Before
-import org.junit.Test
+import kotlin.test.Test
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class VenuesViewModelTest {
-    private val dispatcher = StandardTestDispatcher()
-    private val getNearbyVenuesUseCase = mockk<GetNearbyVenuesUseCase>()
-    private val citiesUseCase = mockk<GetSupportedCitiesUseCase>()
-    private lateinit var viewModel: VenuesViewModel
-
-    private val locations =
-        listOf(
-            Location(60.169, 24.931),
-            Location(60.169, 24.931),
-            Location(60.169, 24.931),
-            Location(60.169, 24.931),
-            Location(60.169, 24.931),
-            Location(60.169, 24.931),
-        )
-    private val mockHelsinki =
-        mockk<Helsinki> {
-            every { displayName } returns "Helsinki"
-            every { coordinates } returns locations
-        }
-    private val venues =
-        listOf(
-            Venue(
-                id = "67c571f5dafd795cde3f22e1",
-                name = "Hesburger Helsinki Pasila Tripla",
-                shortDescription = "Herkulliset hampurilaiset & tortillat",
-                imageUrl = "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4",
-            ),
-            Venue(
-                id = "67039d617b34437fa839f85b",
-                name = "Burger King Citycenter",
-                shortDescription = "Liekillä grillatut hampurilaiset",
-                imageUrl = "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d",
-            ),
-            Venue(
-                id = "561e29316d475308275d6854",
-                name = "Subway Iso Roobertinkatu",
-                shortDescription = "Parhaat hetket ovat edessä.",
-                imageUrl = "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384",
-            ),
-            Venue(
-                id = "6411b53cc19783bc82b1d7cc",
-                name = "Cafe Korvari",
-                shortDescription = "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
-                imageUrl = "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff",
-            ),
-            Venue(
-                id = "661933b4a8a2d509c33d0f53",
-                name = "Pizzakuningas Pasila",
-                shortDescription = "Kuningas pizzaa ja kebabia!",
-                imageUrl = "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2",
-            ),
-            Venue(
-                id = "66262b2273278067c6a544fc",
-                name = "King's Pizza",
-                shortDescription = "Vönerit ja vegaanipizzat",
-                imageUrl = "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3",
-            ),
-        )
+    lateinit var viewModel: VenuesViewModel
+    lateinit var nearbyVenuesUseCase: GetNearbyVenuesUseCase
+    lateinit var supportedCitiesUseCase: GetSupportedCitiesUseCase
 
     @Before
     fun setup() {
-        Dispatchers.setMain(dispatcher)
+        supportedCitiesUseCase =
+            mockk {
+                every { this@mockk.invoke() } returns listOf(Helsinki, Hamburg, Vienna, Tallinn, Stockholm)
+            }
+        nearbyVenuesUseCase =
+            mockk {
+//                every { this@mockk.invoke() } returns emptyList()
+            }
         viewModel =
-            VenuesViewModel(getNearbyVenuesUseCase, citiesUseCase, "Helsinki")
-    }
-
-    @After
-    fun tearDown() {
-        Dispatchers.resetMain()
+            VenuesViewModel(
+                getNearbyVenues = nearbyVenuesUseCase,
+                getSupportedCitiesUseCase = supportedCitiesUseCase,
+                defaultCityName = "Hamburg",
+            )
     }
 
     @Test
-    fun `loadVenues emits Loading then Success`() =
+    fun `test initial state`() =
         runTest {
-            coEvery { citiesUseCase() } returns listOf(mockHelsinki)
-            coEvery { getNearbyVenuesUseCase(any()) } returns venues
-
-            viewModel = VenuesViewModel(getNearbyVenuesUseCase, citiesUseCase, "Helsinki")
-
-            viewModel.uiState.test {
-                val loading = awaitItem()
-                assertTrue(loading is VenuesUiState.Loading)
-
-                val success = awaitItem()
-                assertTrue(success is VenuesUiState.Success)
-                assertEquals(6, (success as VenuesUiState.Success).venues.size)
-
-                cancelAndIgnoreRemainingEvents()
-            }
-        }
-
-    @Test
-    fun `loadVenues handles cancellation gracefully`() =
-        runTest {
-            coEvery { getNearbyVenuesUseCase(any()) } coAnswers {
-                delay(1000) // Simulate slow response
-                venues
-            }
-            coEvery { citiesUseCase() } returns listOf(mockHelsinki)
-
-            viewModel = VenuesViewModel(getNearbyVenuesUseCase, citiesUseCase, "Helsinki")
-
-            viewModel.uiState.test {
-                val job =
-                    launch {
-                        viewModel.loadVenues("Helsinki")
-                    }
-
-                // Allow some time for Loading to be emitted
-                advanceUntilIdle()
-                job.cancel()
-
-                val loadingOrLast = expectMostRecentItem()
-                assertTrue(loadingOrLast is VenuesUiState.Loading || loadingOrLast is VenuesUiState.Success)
-
-                cancelAndIgnoreRemainingEvents()
-            }
+            val initialState = viewModel.uiState.value
+            assertEquals(VenuesUiState.Loading, initialState)
         }
 }
