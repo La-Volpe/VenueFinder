@@ -5,6 +5,7 @@ import de.arjmandi.venues.domain.repository.FavoriteRepository
 import de.arjmandi.venues.domain.repository.VenueRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.take
 
 class GetVenuesForLocationUseCase(
     private val venueRepository: VenueRepository,
@@ -12,12 +13,7 @@ class GetVenuesForLocationUseCase(
 ) {
     suspend operator fun invoke(lat: Double, lon: Double): Flow<List<Venue>> {
         val venuesFlow = venueRepository.getVenues(lat, lon)
-        val favoritesFlow = favoriteRepository.getFavoriteIds()
-
-        return combine(venuesFlow, favoritesFlow) { venues, favorites ->
-            venues
-                .take(15)
-                .map { it.copy(isFavorite = favorites.contains(it.id)) }
-        }
+        return venuesFlow
+            .take(15)
     }
 }

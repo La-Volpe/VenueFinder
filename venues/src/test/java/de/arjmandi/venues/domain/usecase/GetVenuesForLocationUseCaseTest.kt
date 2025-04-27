@@ -31,7 +31,6 @@ class GetVenuesForLocationUseCaseTest {
    Venue(it.toString(), "Venue $it", "Description", "image", false)
   }
 
-  coEvery { favoriteRepository.getFavoriteIds() } returns flowOf(setOf("1", "3", "5"))
   coEvery { venueRepository.getVenues(any(), any()) } returns flowOf(venues)
 
   val result = useCase(0.0, 0.0).first()
