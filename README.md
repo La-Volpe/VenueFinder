@@ -1,4 +1,7 @@
 # Wolt Mobile app assignment
+## Notes from the applicant
+
+Please see the NOTES.md file
 
 ## Concept
 
@@ -86,7 +89,3 @@ No, portrait mode is sufficient.
 **Do I need to strictly follow the design example?**
 
 The provided mockup is just a suggestion. Feel free to design the UI your own way as long as it contains the same information.
-
-## Notes from the applicant
-
-> Please write here if you want to explain the choices you made on the way :).

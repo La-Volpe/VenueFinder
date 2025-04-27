@@ -1,0 +1,1910 @@
+{
+  "items": [
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "dessert",
+              "burgers",
+              "american",
+              "wraps",
+              "salad"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-1"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "jfSbKEjtXKXtXlPdgOhk;;OYgPhC",
+        "url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "5ae6013cf78b5a000bb64022",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "jfSbKEjtXKXtXlPdgOhk;;OYgPhC",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 0
+          },
+          {
+            "id": "rating",
+            "value": 707
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 0
+          },
+          {
+            "id": "distance",
+            "value": 23
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 12
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b0a",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "McDonald's Helsinki Kamppi",
+      "track_id": "venue-mcdonalds-kamppi-1",
+      "venue": {
+        "address": "Fredrikinkatu 46",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "U7DI{Zj@0Uj@s-fQ9za|0Caz},fQWEfQ^Kjt",
+          "url": "https://imageproxy.wolt.com/mes-image/8695de58-c638-437d-a314-ad0ee5bc530f/2fa31f49-7a63-455e-999d-6b470d22903a"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 15,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "10-20"
+        },
+        "estimate_range": "10-20",
+        "franchise": "",
+        "id": "5ae6013cf78b5a000bb64022",
+        "location": [
+          24.93014574,
+          60.16896328
+        ],
+        "name": "McDonald's Helsinki Kamppi",
+        "online": true,
+        "price_range": 1,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 8,
+          "volume": 6658
+        },
+        "short_description": "I'm lovin' it.",
+        "show_wolt_plus": false,
+        "slug": "mcdonalds-kamppi-1",
+        "tags": [
+          "hamburger",
+          "salad",
+          "dessert"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "67bd4785a6cff00446855937",
+            "image": {
+              "blurhash": "U:QI;=xZ?wEgx]kCROjFtlbbV?nhs;afWBkA",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b892e2da-f003-11ed-923a-06acece2da46_fd_fi_8013_55.png"
+            },
+            "name": "Tuplajuustoateria",
+            "price": 1035
+          },
+          {
+            "currency": "EUR",
+            "id": "67bd4785a6cff00446855933",
+            "image": {
+              "blurhash": "U;P?UFxZ?wIp%MofM{WBx^bbRPn$bbWCn%od",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b88fa6e2-f003-11ed-923a-06acece2da46_fd_fi_8010_55.png"
+            },
+            "name": "Big Mac\u2122 -ateria",
+            "price": 1230
+          },
+          {
+            "currency": "EUR",
+            "id": "67f52404d303515b257a80d1",
+            "image": {
+              "blurhash": "UA7T-8wH9~I@5HWVxasl9vNa-AxD}-xCENNy",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6167cfed6f8ec3f3f538d0dd/190edc44-13e4-11f0-8636-264fdffda0de_fd_fi_8473_1.png"
+            },
+            "name": "A Minecraft Movie Menu",
+            "price": 1900
+          },
+          {
+            "currency": "EUR",
+            "id": "666000a4a8e98b10c0f76b2a",
+            "image": {
+              "blurhash": "U;P~=$xZ?wIpx]kCM{aex^bbRPjFbcWCn%oe",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b90561ac-f003-11ed-923a-06acece2da46_fd_fi_8062_3012.png"
+            },
+            "name": "El Maco -ateria",
+            "price": 1165
+          },
+          {
+            "currency": "EUR",
+            "id": "666000a4a8e98b10c0f76b2c",
+            "image": {
+              "blurhash": "U;P?UFxZ?wIpx]ofM{WBx^bbRPjFX9WCn$oe",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b8f880b8-f003-11ed-923a-06acece2da46_fd_fi_8011_55.png"
+            },
+            "name": "McFeast\u2122 -ateria",
+            "price": 1230
+          },
+          {
+            "currency": "EUR",
+            "id": "67bd4785a6cff00446855935",
+            "image": {
+              "blurhash": "U:QI@{xZ?wIpx]kCRPaetmX8RPniofafayod",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b90ee4ac-f003-11ed-923a-06acece2da46_fd_fi_7591_55.png"
+            },
+            "name": "Triplajuustoateria",
+            "price": 1190
+          },
+          {
+            "currency": "EUR",
+            "id": "666000a4a8e98b10c0f76b28",
+            "image": {
+              "blurhash": "U;QI@{xZ?wIpx]kCRPWBtmbbV?nis;WCafod",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b8f3b1dc-f003-11ed-923a-06acece2da46_fd_fi_6015_55.png"
+            },
+            "name": "Double Quarter Pounder\u2122 with cheese -ateria",
+            "price": 1465
+          },
+          {
+            "currency": "EUR",
+            "id": "67bd4785a6cff00446855929",
+            "image": {
+              "blurhash": "UhO3d{H=~qxb%MR5s-X9.StRRiWBIAtRflaJ",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b8d55020-f003-11ed-923a-06acece2da46_fd_fi_8464_55.png"
+            },
+            "name": "Big Mac Plus-ateria ja Tuplajuusto",
+            "price": 1775
+          },
+          {
+            "currency": "EUR",
+            "id": "67c66f451555ff5d1a567045",
+            "image": {
+              "blurhash": "U?PsO?s,?wNc%Mj@M{f8%NbIM{jYozWCe.s,",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/62e79a502998e64dfce5410b/ab0bd63c-f7f7-11ef-9fff-5ea4ac3286ad_fd_fi_2331.png"
+            },
+            "name": "Chipotle Mission -ateria",
+            "price": 1330
+          },
+          {
+            "currency": "EUR",
+            "id": "67bd4785a6cff0044685596b",
+            "image": {
+              "blurhash": "UXQlzfia_NtS?wNINHtR?wx^IARjRislnNRi",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5e835543815f65fa2b18072c/b8caf99a-f003-11ed-923a-06acece2da46_fd_fi_1220_2.png"
+            },
+            "name": "Chicken McNuggets\u2122 20 kpl + 3 dippi\u00e4",
+            "price": 1410
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "burgers",
+              "chicken"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-1"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "jaWm0ZKqYAhCWmqpd5KFYjKDbbpp",
+        "url": "https://imageproxy.wolt.com/assets/67321481e34d3d02aa5a2ef4"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "630723a28b2af6d016acbd64",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "jaWm0ZKqYAhCWmqpd5KFYjKDbbpp",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 1
+          },
+          {
+            "id": "rating",
+            "value": 252
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 1
+          },
+          {
+            "id": "distance",
+            "value": 5
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 13
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b0c",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "kot.TENNISPALATSI",
+      "track_id": "venue-kotkot-punavuori",
+      "venue": {
+        "address": "Fredrikinkatu 65",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "UHQ3rRWp=JoKjta|fQjt|^o1AXWpjto1fQa|",
+          "url": "https://imageproxy.wolt.com/mes-image/d1fe2e7c-4504-48b0-9805-c9e2d115d740/81b0e0c9-a616-4bf1-bc5e-4af441fbc6a8"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 15,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "10-20"
+        },
+        "estimate_range": "10-20",
+        "franchise": "",
+        "id": "630723a28b2af6d016acbd64",
+        "location": [
+          24.9299445,
+          60.1695044
+        ],
+        "name": "kot.TENNISPALATSI",
+        "online": true,
+        "price_range": 1,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 4,
+          "score": 9,
+          "volume": 1112
+        },
+        "short_description": "We Kot you.",
+        "show_wolt_plus": false,
+        "slug": "kotkot-punavuori",
+        "tags": [
+          "burger",
+          "chicken"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "677646a4fe6c1c628fe6daba",
+            "image": {
+              "blurhash": "UPQq~u;f_mF_$KtjJURP@wNaKzr_N3RR$zt7",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/3b636a14-ba0f-11ef-806f-0253107c0661_zsdpwba2sbms1rdkcm02.webp"
+            },
+            "name": "BURGER.LUNCH",
+            "price": 1369
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf61",
+            "image": {
+              "blurhash": "URQXbH=u_,9_xWt5J+Rl{3J8KhweN1VvxFtO",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/b3d623b6-ba0e-11ef-9727-52ce1d626740_nsebbkmpuhzmkrbmddga.webp"
+            },
+            "name": "ORIGINAL.MEAL",
+            "price": 1499
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf4f",
+            "image": {
+              "blurhash": "ULQrFC^P_TEK;dnhI[b]_,J-K#niIvRm$|w^",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/891ffc4a-ba0f-11ef-9fa0-2667a407dfb1_alsnun9w0hjhtuiv31d3.webp"
+            },
+            "name": "ORIGINAL.TEAM",
+            "price": 2449
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf77",
+            "image": {
+              "blurhash": "UoPp{Ps.=kNHs;azWBj?$,ayNFj[bIazjYj[",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/519ec0de-ba10-11ef-aa09-2667a407dfb1_pyg8yaycehtkgshfzhoy.webp"
+            },
+            "name": "HOTHONEY.BURGER",
+            "price": 999
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf73",
+            "image": {
+              "blurhash": "UMQXnkbu.rn6%1fiRjjb|LaeAWofnPazkCj?",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6487305a092aead9c0b2e9e3/f1b1342a-2d8f-11ef-b221-c28806bbb3fe_ziy5vhcybmslmg82ykqm.webp"
+            },
+            "name": "ORIGINAL.DOPPEL",
+            "price": 1099
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf5f",
+            "image": {
+              "blurhash": "UlO4A],;yzJBkloxVxRlygSgRCsAjIV]oKt5",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/25850de2-ba0f-11ef-8d61-7a55a48ea08b_u5ljpytgyg0s225tr6ez.webp"
+            },
+            "name": "LEMONPEPPER.MEAL",
+            "price": 1549
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf5d",
+            "image": {
+              "blurhash": "UJL0~o}n9I13b@xsjaIrD,E#xs,=M*Vv$$tO",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/a20b5296-ba0e-11ef-8640-52e31f9e14e7_thyiwvjb2pjyqupj76pg.webp"
+            },
+            "name": "HOT.MEAL",
+            "price": 1599
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf6d",
+            "image": {
+              "blurhash": "UmO^=#od]uR-oLfka}jY-CjaNtbHjZbGkCe:",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/e7f10264-ba0f-11ef-9dd2-9e89e083d5b7_kcpnm4dqaszrgftou59h.webp"
+            },
+            "name": "HOTHONEY.DOPPEL",
+            "price": 1199
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf53",
+            "image": {
+              "blurhash": "UcPgwG-V,5Io$%jFNHkV-ZS4R~jrRqWVt2nl",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/7a21b6a2-ba0f-11ef-b2d4-aab8dbe3e6a1_ewgpjvftyr5n75uq7x7e.webp"
+            },
+            "name": "HOTHONEY.TEAM",
+            "price": 2549
+          },
+          {
+            "currency": "EUR",
+            "id": "67d15c408017c575ea90bf71",
+            "image": {
+              "blurhash": "U:NwwOoe*7R*tNbGV]jax:azRTfjbYazjIod",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/630725053f09cf1e29018042/79b7bb2a-ba10-11ef-a285-ae0a4ba542d8_vgq3p5vvjcj6pqevxjb4.webp"
+            },
+            "name": "LEMONPEPPER.DOPPEL",
+            "price": 1149
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "dessert",
+              "mexican",
+              "ice_cream"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-1"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "jjIEu04WdcOQ;9LbFkKYNrPbORpH",
+        "url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "5cc175b2daaaee24fdbb92ee",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "jnKV688WhrOR;IOXFkGYPdOWOSpH",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 2
+          },
+          {
+            "id": "rating",
+            "value": 708
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 111
+          },
+          {
+            "id": "distance",
+            "value": 1
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 304
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b0d",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Taco Bell Tennispalatsi",
+      "track_id": "venue-taco-bell-tennispalatsi",
+      "venue": {
+        "address": "Fredrikinkatu 65",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "UHSF-Eay_MRj-;j[WBj[~pj[9Goy9FWBs;WB",
+          "url": "https://imageproxy.wolt.com/mes-image/fa8123a5-4d06-455c-9552-53977ef195db/9584d9b3-9203-41cf-92ed-d11b90886a95"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 25,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "20-30"
+        },
+        "estimate_range": "20-30",
+        "franchise": "",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "location": [
+          24.93055344,
+          60.16920878
+        ],
+        "name": "Taco Bell Tennispalatsi",
+        "online": true,
+        "price_range": 1,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 8,
+          "volume": 1359
+        },
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "show_wolt_plus": false,
+        "slug": "taco-bell-tennispalatsi",
+        "tags": [
+          "burrito",
+          "mexican",
+          "snacks"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "6423e472458a0ec29ef909a0",
+            "image": {
+              "blurhash": "UdR.}mRj?wx]xuWBWAtR.9ofMwV@ITkCt8V?",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5baba3efdf09cf000df56f55/6a50320a-2015-11f0-a81b-0a1bbe5dd3a9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivr3jpbgxlzcuymhn0dwz0jtiwynvycml0byuymg1lywwtnjqwmddjzmy3njy0ymiwmdjjntzlzmewlmpwzwc_.jpeg"
+            },
+            "name": "Grilled Stuft Burrito Meal",
+            "price": 1595
+          },
+          {
+            "currency": "EUR",
+            "id": "6423e472458a0ec29ef909a8",
+            "image": {
+              "blurhash": "UbS6GKV@?wxut8WBR%tRx^j[MxWBITj]xvV@",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5ca3186a35c939000caf422e/f1985984-21a7-11f0-9a3c-fe3732a956d9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivq3j1bmnod3jhccuymhn1chjlbwulmjbtzwfslty0mda3y2zmnzy2ngjimdayyzu2zwziys5qcgvn.jpeg"
+            },
+            "name": "Crunchwrap Supreme Meal",
+            "price": 1395
+          },
+          {
+            "currency": "EUR",
+            "id": "672864b9ef89c96b019c13d7",
+            "image": {
+              "blurhash": "UrQ+]5WB?wkB%hjYV@ogx^ofjEWAMwWBRjjs",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5ca3186a35c939000caf422e/f199d890-21a7-11f0-9a3c-fe3732a956d9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivqmvlznldagvlc3lcdxjyaxrvtwvhbf8xmjawedgwmc02nziwyjzkotc3m2myowi2odqyywyxmzeucg5n.jpeg"
+            },
+            "name": "Beefy Cheesy Burrito Meal",
+            "price": 1495
+          },
+          {
+            "currency": "EUR",
+            "id": "665d5c8f3475fd8ccad974c5",
+            "image": {
+              "blurhash": "UvQc6ajZ?wWB%2ogNGae.TbIV?oeR+adn+az",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5ce4f38e60b3bc85fd5302f6/11aff3ee-1e83-11f0-98c8-12aa4bc9d2b5_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivtmfjag9zjtiwu3vwcmvtzs02ndawn2q5yzrhzji3mzawmjywodu5njyuanblzw__.jpeg"
+            },
+            "name": "Nachos Supreme",
+            "price": 995
+          },
+          {
+            "currency": "EUR",
+            "id": "6423e472458a0ec29ef909aa",
+            "image": {
+              "blurhash": "UYR{iKIU.T.8x]jFV?o}.9t8MwM{McbctSVr",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5ca3186a35c939000caf422e/f1a22496-21a7-11f0-9a3c-fe3732a956d9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivuxvlc2fkawxsysuymg1lywwtnjqwmddkowm0ywyynzmwmdi2mdg1otvhlmpwzwc_.jpeg"
+            },
+            "name": "Quesadilla Meal",
+            "price": 1445
+          },
+          {
+            "currency": "EUR",
+            "id": "6423e472458a0ec29ef909ac",
+            "image": {
+              "blurhash": "UgR.}kV@?wtRxuWBRjtR%$ofMwaeITkCt8Ri",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5baba3efdf09cf000df56f55/6a5a0d52-2015-11f0-a81b-0a1bbe5dd3a9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivmiuymhrhy29zjtiwc3vwcmvtzsuymg1lywwtnjqwmddjzmy3njy0ymiwmdjjntzlzme5lmpwzwc_.jpeg"
+            },
+            "name": "2 Tacos Supreme Meal",
+            "price": 1495
+          },
+          {
+            "currency": "EUR",
+            "id": "66138101ffe60b569c8c9650",
+            "image": {
+              "blurhash": "UvQcP8WY?ve-xuayWBof?wodMxWXM{a}f5ae",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5baba3dfdede59000c6b8e40/9f46586c-1a94-11f0-b73f-daacc7e8841e_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivrg91ymxlx0nxu18xmjawedgwmc02njbkmgewownmnjaynwrimwvlmzyyndgucg5n.jpeg"
+            },
+            "name": "Double Crunchwrap Supreme",
+            "price": 1095
+          },
+          {
+            "currency": "EUR",
+            "id": "66570a2dd1be89986e61cad0",
+            "image": {
+              "blurhash": "UlQl%nRP?wtl%NRiWBx]%hfkV@oKI9bIfRRj",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5ce4f38e60b3bc85fd5302f6/117ee74a-1e83-11f0-98c8-12aa4bc9d2b5_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivq3jpc3b5jtiwq2hpy2tlbiuymej1cnjpdg9fmtiwmhg4mdbfbwvhbcuymcgyksuymcgxks02nwvlyja0yzjiztewmzy4ody4ymvingyucg5n.jpeg"
+            },
+            "name": "Crispy Chicken Burrito Meal",
+            "price": 1495
+          },
+          {
+            "currency": "EUR",
+            "id": "6423e472458a0ec29ef909cc",
+            "image": {
+              "blurhash": "UXSPOpj[?cWVt7j[WBay?wj[D$jZM{ayxtfk",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5baba3dfdede59000c6b8e40/f11d71f6-21a7-11f0-b7f5-8e7283916e17_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivr3jpbgxlzcuymhn0dwz0jtiwynvycml0by02ndawn2nmzjc2njriyjawmmm1nmvmyteuanblzw__.jpeg"
+            },
+            "name": "Grilled Stuft Burrito",
+            "price": 975
+          },
+          {
+            "currency": "EUR",
+            "id": "66138101ffe60b569c8c962e",
+            "image": {
+              "blurhash": "UuQcM1V@?^oz%MadWUtR%gofV@adITW=ayV@",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5baba3efdf09cf000df56f55/6a497410-2015-11f0-a81b-0a1bbe5dd3a9_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82m2qynjm3owqxzthlzwe4nze3zweznjivrg91ymxlx0nxu18xmjawedgwmf9nzwfslty2mgqwnjg2y2y2mdi1zgixzwuznji0my5wbmc_.jpeg"
+            },
+            "name": "Double Crunchwrap Supreme Meal",
+            "price": 1695
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "american",
+              "wings",
+              "lunch"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j9JWKCgOjbcx;;LciYPdPKN3N3uG",
+        "url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "654233aa4cc25505e8ce1bff",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j4LreKJB01hq;jLc4WXsX;R3ch8P",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 3
+          },
+          {
+            "id": "rating",
+            "value": 527
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 10
+          },
+          {
+            "id": "distance",
+            "value": 63
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 366
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b0e",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Siipiweikot Kamppi",
+      "track_id": "venue-siipiweikot-kamppi",
+      "venue": {
+        "address": "Lapinlahdenkatu 3",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "U9S?DVj[-;ayWBayj[j[~qj[D%ofxuj[ayay",
+          "url": "https://imageproxy.wolt.com/mes-image/ea0bb03a-2783-4f5b-af45-43fed11195e5/5608fedb-9f64-4ce0-9a23-d875cca1f008"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 20,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "15-25"
+        },
+        "estimate_range": "15-25",
+        "franchise": "",
+        "id": "654233aa4cc25505e8ce1bff",
+        "location": [
+          24.9311136,
+          60.1665826
+        ],
+        "name": "Siipiweikot Kamppi",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 8.6,
+          "volume": 1084
+        },
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "show_wolt_plus": false,
+        "slug": "siipiweikot-kamppi",
+        "tags": [
+          "american",
+          "finger food",
+          "hotdog"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dacdfa",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/3171901e-ed72-11e8-96a0-0a5864631b7d_IsoAteria.jpeg"
+            },
+            "name": "Iso Siipiateria",
+            "price": 1840
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace26",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/d308f5e4-ed71-11e8-9381-0a5864632f0d_Wings16.jpeg"
+            },
+            "name": "16 kpl Siipiannos",
+            "price": 1860
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace04",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/2990a998-ed72-11e8-b325-0a586461c4ae_PieniAteria.jpeg"
+            },
+            "name": "Pieni Siipiateria",
+            "price": 1510
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace28",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/cb4c06de-ed71-11e8-9f9d-0a586463232e_Wingsit10.jpeg"
+            },
+            "name": "10 kpl Siipiannos",
+            "price": 1430
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace0e",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/e01762f2-ed71-11e8-b375-0a5864632f0d_Wingsit20.jpeg"
+            },
+            "name": "20 kpl Siipiannos",
+            "price": 2210
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace9e",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c8a60e7df1e95000a384668/2296d1a4-f6d7-11ec-add9-d6d6a001a80c_dsc_8153.jpeg"
+            },
+            "name": "Iso Siipiateria & limsat\u00f6lkki",
+            "price": 2190
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace98",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c8a60e7df1e95000a384668/4e198a98-9f97-11ec-98df-82676277ef2e_dsc_7792.jpeg"
+            },
+            "name": "ISO Boneless- siipiateria",
+            "price": 2050
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace96",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c8a60e7df1e95000a384668/3d6ec0dc-9f97-11ec-afa6-82676277ef2e_dsc_7790.jpeg"
+            },
+            "name": "PIENI Boneless- siipiateria",
+            "price": 1520
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace12",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/e94d6aba-ed71-11e8-8e4b-0a586463232e_Wingsit.jpeg"
+            },
+            "name": "25 kpl Siipiannos",
+            "price": 2760
+          },
+          {
+            "currency": "EUR",
+            "id": "65afae72d515b40746dace62",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c8a60e7df1e95000a384668/ab37c2de-95c7-11ea-8f7b-0a5864701b32_kuva8.jpeg"
+            },
+            "name": "Pieni SiiWEGE ateria",
+            "price": 1590
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "vegetarian",
+              "street_food",
+              "lunch",
+              "sushi",
+              "soup",
+              "fish",
+              "japanese"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j7QsiW8zmHcP;;4g4hh3X;;;NiPd",
+        "url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "5f16ec0be0c7486ca166bf37",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j8OrCFWB00Nl;;GGgOLdmITakOmX",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 4
+          },
+          {
+            "id": "rating",
+            "value": 34
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 11
+          },
+          {
+            "id": "distance",
+            "value": 6
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 14
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b0f",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Eat Poke Kamppi",
+      "track_id": "venue-eat-poke-kamppi",
+      "venue": {
+        "address": "Urho Kekkosen Katu 1",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "UQQ]=@of~qWB?HD%D%-pWBj[t7j[xu%2WBWB",
+          "url": "https://imageproxy.wolt.com/mes-image/08146282-a57f-4ae4-a78e-9e9a4135ed2c/e31b7cc6-7108-4b04-a2e1-130df20c42f2"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 20,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "15-25"
+        },
+        "estimate_range": "15-25",
+        "franchise": "",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "location": [
+          24.9332274,
+          60.1691567
+        ],
+        "name": "Eat Poke Kamppi",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 4,
+          "score": 9.4,
+          "volume": 1153
+        },
+        "short_description": "Helsingin ensimm\u00e4inen kokonaan poke-kulhoille omistettu ravintola",
+        "show_wolt_plus": false,
+        "slug": "eat-poke-kamppi",
+        "tags": [
+          "fish",
+          "soup",
+          "street food"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de16",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/67c1b0b0ca21df22e0c8b3df"
+            },
+            "name": "Build Your Own Poke Bowl",
+            "price": 1720
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de08",
+            "image": {
+              "blurhash": "jeUJzjPt;;F4X;llcyKXHdKqgOmW",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/778e2154-c313-11ed-9ff2-76990c6a004a_salmon_avocado_bowl.jpeg"
+            },
+            "name": "Salmon Avocado Bowl",
+            "price": 1680
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de0f",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/3aeafca4-c313-11ed-bad7-5ea1bcbea217_double_salmon_bowl.jpeg"
+            },
+            "name": "Double Salmon Bowl",
+            "price": 1780
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de04",
+            "image": {
+              "blurhash": "jdUZDkPt;;l4XLl4cyLcmZKGp3mG",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/54a05b4e-c313-11ed-9c74-b6d7dc290c1a_flamed_salmon_avocado_bowl.jpeg"
+            },
+            "name": "Flamed Salmon Avocado Bowl",
+            "price": 1780
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7ddf6",
+            "image": {
+              "blurhash": "jdUJDkPt;;J5XLl4cyKXDdKrl2mS",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/82bdcbb0-c313-11ed-9bcc-92bb9a59aa29_smoked_salmon_avocado_bowl.jpeg"
+            },
+            "name": "Smoked Salmon Avocado bowl",
+            "price": 1680
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de1c",
+            "image": {
+              "blurhash": "jeUdziPt;;FlXLllcOKXPdKGgOmG",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/6012d48e-c313-11ed-b8ee-2e49d241643f_inari_avocado_bowl.jpeg"
+            },
+            "name": "Inari Avocado Bowl",
+            "price": 1680
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7ddf4",
+            "image": {
+              "blurhash": "jeUtzjPt;;F5XKllcOKXLdKrh3mS",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/8e0328e4-c313-11ed-9869-c2eb1f0147e1_tiger_prawn_avocado_bowl.jpeg"
+            },
+            "name": "Tiger Prawn Avocado Bowl",
+            "price": 1680
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7de06",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/2f72b0ce-c313-11ed-9a76-b61c94062312_double_original_shoyu_salmon_bowl.jpeg"
+            },
+            "name": "Double Original Shoyu Salmon Bowl",
+            "price": 1780
+          },
+          {
+            "currency": "EUR",
+            "id": "5f16f2e8dece0cad42f7ddf3",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5f16f2d85550fa1f4fa4747a/98dbbc18-c313-11ed-aed1-0e977c0e58d7_tropicana.jpeg"
+            },
+            "name": "Tropicana",
+            "price": 1720
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "bowl",
+              "healthy",
+              "smoothie",
+              "cafe",
+              "sandwich"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j2PaeE;ZYv0P9h;uhd;vb;Tu4N8g",
+        "url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "67cad7f4315e6740072a4950",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j2PaeE;ZYv0P9h;uhd;vb;Tu4N8g",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 5
+          },
+          {
+            "id": "rating",
+            "value": 253
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 12
+          },
+          {
+            "id": "distance",
+            "value": 7
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 367
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b10",
+      "telemetry_venue_badges": [
+        "new"
+      ],
+      "template": "venue-large",
+      "title": "Joe & The Juice Kamppi",
+      "track_id": "venue-joe-the-juice-kamppi",
+      "venue": {
+        "address": "Urho Kekkosen katu 1",
+        "badges": [
+          {
+            "text": "New",
+            "variant": "primary"
+          }
+        ],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "UTO{5sWB~Dof%2j[R%j[~Dj[9sayE1ay%2ay",
+          "url": "https://imageproxy.wolt.com/mes-image/d6d38c1e-dcb2-4330-be2c-570edee6911e/b5404b12-5e6e-4129-a712-02e3d47b60ef"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 20,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "15-25"
+        },
+        "estimate_range": "15-25",
+        "franchise": "",
+        "id": "67cad7f4315e6740072a4950",
+        "location": [
+          24.9332275,
+          60.1691567
+        ],
+        "name": "Joe & The Juice Kamppi",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 4,
+          "score": 9,
+          "volume": 242
+        },
+        "short_description": "Smoothie- ja mehubaari",
+        "show_wolt_plus": false,
+        "slug": "joe-the-juice-kamppi",
+        "tags": [
+          "bowl",
+          "caf\u00e9",
+          "coffee"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "67d005c3809bc92eb89d88b8",
+            "image": {
+              "blurhash": "UHJ${S2c}?7#Inv|NGE1%3kCxa-pIpi_afM{",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/67cad97d2acfb03d2c0a20e1/d8f4af44-19bf-11f0-ac39-46e632de90f3_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82mzblmju5ztgynmnmmjgxnti5mze1zwevu2nyzwvuc2hvdcuymdiwmjutmditmtklmjbhdcuymde3mti1my02n2qwmjnjnjy4mjzjmdhhymu3yzk2zmyucg5n.jpeg"
+            },
+            "name": "NEW The Steak",
+            "price": 1090
+          },
+          {
+            "currency": "EUR",
+            "id": "67d042d58112752e4ec7912c",
+            "image": {
+              "blurhash": "UDNu^hV,pRM|}$D@ob_2O$xLv1FY-i^+?vEy",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6033eb7d89380e4af0f27ee4/e5ab0c84-21a7-11f0-81b7-3aea9493c201_ahr0chm6ly9qb2vqdwljzwfzc2v0cy5zmy5lds13zxn0lteuyw1hem9uyxdzlmnvbs9wb3mvyxnzzxrzl2u4ndq4ytdilte2ywutnguwzc04mwq5lwm4ytg5yji4zjjlmi9czwv0c2fuzejlcnjpzxmtedmtediuanbn.jpeg"
+            },
+            "name": "Beets & Berries",
+            "price": 990
+          },
+          {
+            "currency": "EUR",
+            "id": "67d005c3809bc92eb89d88ba",
+            "image": {
+              "blurhash": "UHJ${S2c}?7#Inv|NGE1%3kCxa-pIpi_afM{",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/67cad97d2acfb03d2c0a20e1/d8f4af44-19bf-11f0-ac39-46e632de90f3_ahr0chm6ly9zdg9yywdllmdvb2dszwfwaxmuy29tl2lrb25hlwj1y2tldc1wcm9kdwn0aw9ul2ltywdlcy82mzblmju5ztgynmnmmjgxnti5mze1zwevu2nyzwvuc2hvdcuymdiwmjutmditmtklmjbhdcuymde3mti1my02n2qwmjnjnjy4mjzjmdhhymu3yzk2zmyucg5n.jpeg"
+            },
+            "name": "NEW The Steak",
+            "price": 1090
+          },
+          {
+            "currency": "EUR",
+            "id": "67d042d58112752e4ec79128",
+            "image": {
+              "blurhash": "USMjH._4yDI9MxtRNIjE_NtSVrs:obkWxYRi",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/624b040950845d2c40b165a5/61a77b5e-2015-11f0-b8be-7e59ae45f4ed_ahr0chm6ly9qb2vqdwljzwfzc2v0cy5zmy5lds13zxn0lteuyw1hem9uyxdzlmnvbs9wb3mvyxnzzxrzlzg5nzezzdrmltgwmjytndc3zs04odfllwq2n2y0ndkyngy0ny9qcm90zwlux1noywtlx0nob2nvbgf0zv9ub3bgcm9udf8ymdawediwmdatediucg5n.jpeg"
+            },
+            "name": "Chocolate Flex",
+            "price": 990
+          },
+          {
+            "currency": "EUR",
+            "id": "67d042d58112752e4ec79124",
+            "image": {
+              "blurhash": "UVLgz=yG=_VraZESn#-o-hx^o}xDacg4tRM{",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/608156edfef66ac0d74de11b/e8c93374-2179-11f0-b857-0a10844755d5_ahr0chm6ly9qb2vqdwljzwfzc2v0cy5zmy5lds13zxn0lteuyw1hem9uyxdzlmnvbs9wb3mvyxnzzxrzl2qwntzmyje1lte1otatndqyyy04ogrkltbmmmmxndu4njfios9qcm90zwlux1noywtlx1vuawnvcm5uzwfyc19ub3bgcm9udf8ymdawediwmdatediuanblzw__.jpeg"
+            },
+            "name": "Unicorn Tears",
+            "price": 990
+          },
+          {
+            "currency": "EUR",
+            "id": "67d042d58112752e4ec7912a",
+            "image": {
+              "blurhash": "UCOC~g^Xt,IT~Jm~sjSh9r$a$vIBI9-j-;V@",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/606d9cffe4143b82a1f4a020/d45cc3fe-21d5-11f0-9ca0-8651d5fe74bf_ahr0chm6ly9qb2vqdwljzwfzc2v0cy5zmy5lds13zxn0lteuyw1hem9uyxdzlmnvbs9wb3mvyxnzzxrzlzvhotu0yzrhltcynzctngqzyy05mdvhltk5oddjywvlnzq3ys9qcm90zwlux1noywtlx1rozu51dhr5x1rvcezyb250xziwmdb4mjawmc14mi5qcgvn.jpeg"
+            },
+            "name": "The Nutty",
+            "price": 990
+          },
+          {
+            "currency": "EUR",
+            "id": "67d042d58112752e4ec79126",
+            "image": {
+              "blurhash": "UUM@Go~XxwkWs#sqM|tR?cNMRgbHIWa*x.R*",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/62472144b33440e65b9836eb/e63b30fc-21a7-11f0-b6f8-86762ea34421_ahr0chm6ly9qb2vqdwljzwfzc2v0cy5zmy5lds13zxn0lteuyw1hem9uyxdzlmnvbs9wb3mvyxnzzxrzlzhmowyyndbllte5odmtndbkns1iodcyltc5ytnlnmzkytuwoc9qcm90zwlux1noywtlx0jnrv9ub3bgcm9udf8ymdawediwmdatediuanblzw__.jpeg"
+            },
+            "name": "Big Matcha Energy",
+            "price": 990
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "gluten-free",
+              "pasta",
+              "vegetarian",
+              "italian",
+              "pizza",
+              "soup",
+              "salad",
+              "vegan"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j6Iq2i;JTtXuT;bKregO4gSBSPOX",
+        "url": "https://imageproxy.wolt.com/assets/67332fb3827209684f08e2ef"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "5c1bb3c58d5781000abfd079",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j1CUBU0w00000h400Jdu003sZxJp",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 6
+          },
+          {
+            "id": "rating",
+            "value": 727
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 112
+          },
+          {
+            "id": "distance",
+            "value": 204
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 368
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b11",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Vapiano Mikonkatu",
+      "track_id": "venue-vapiano-1",
+      "venue": {
+        "address": "Mikonkatu 15",
+        "badges": [],
+        "badges_v2": [],
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 25,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "20-30"
+        },
+        "estimate_range": "20-30",
+        "franchise": "",
+        "id": "5c1bb3c58d5781000abfd079",
+        "location": [
+          24.94559526,
+          60.17096459
+        ],
+        "name": "Vapiano Mikonkatu",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 7.8,
+          "volume": 1395
+        },
+        "short_description": "Home of Freshness",
+        "show_wolt_plus": false,
+        "slug": "vapiano-1",
+        "tags": [
+          "pizza",
+          "pasta",
+          "salad"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "627c97b2487c3bebe8a37aaa",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1bb56e870e8f000a7d282c/787adcc8-f6a0-11ec-91eb-fa7f471d5920_pasta_crema_di_pollo_side.jpeg"
+            },
+            "name": "PASTA CREMA DI POLLO (L)",
+            "price": 1799
+          },
+          {
+            "currency": "EUR",
+            "id": "65ce0c230a06815de2777e7d",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762e82fb2a1aa1c381a2cb2"
+            },
+            "name": "PASTA CARBONARA (L)",
+            "price": 1749
+          },
+          {
+            "currency": "EUR",
+            "id": "b0d6f9d6a8c0f689c79ea73d",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1bb56e870e8f000a7d282c/787adcc8-f6a0-11ec-91eb-fa7f471d5920_pasta_crema_di_pollo_side.jpeg"
+            },
+            "name": "PASTA CREMA DI POLLO (L) wit box",
+            "price": 1799
+          },
+          {
+            "currency": "EUR",
+            "id": "65ce0c105e651ca82bb17201",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/5c1bb56e870e8f000a7d282c/787adcc8-f6a0-11ec-91eb-fa7f471d5920_pasta_crema_di_pollo_side.jpeg"
+            },
+            "name": "PASTA CREMA DI POLLO (L)",
+            "price": 1749
+          },
+          {
+            "currency": "EUR",
+            "id": "627c97b2487c3bebe8a37aa9",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762eec70aef0034ebc38936"
+            },
+            "name": "PASTA SCAMPI E SPINACI (L)",
+            "price": 2195
+          },
+          {
+            "currency": "EUR",
+            "id": "627c97b2487c3bebe8a37a60",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762eed20aef0034ebc38939"
+            },
+            "name": "PASTA CARBONARA (L)",
+            "price": 1799
+          },
+          {
+            "currency": "EUR",
+            "id": "39f692693ee52e56d6271b80",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762e82fb2a1aa1c381a2cb2"
+            },
+            "name": "PASTA CARBONARA (L) with box",
+            "price": 1799
+          },
+          {
+            "currency": "EUR",
+            "id": "627c97b2487c3bebe8a37a4b",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762ed020de421580db1f11b"
+            },
+            "name": "PASTA BOLOGNESE (L)",
+            "price": 1799
+          },
+          {
+            "currency": "EUR",
+            "id": "627c97b2487c3bebe8a37a42",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/6762ef130de421580db1f17d"
+            },
+            "name": "PASTA POMODORO (V, L)",
+            "price": 1535
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "vegan",
+              "burgers",
+              "vegetarian",
+              "street_food"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j4rlRf:QXK01P;0hTKlB9J4zXs;I",
+        "url": "https://imageproxy.wolt.com/assets/673206ee63ae2357e7f7b394"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "6348098a9157ab2b10bdaf65",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j3H8RzX10iPJ4zUN;;cPSY4R;ZN2",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 7
+          },
+          {
+            "id": "rating",
+            "value": 528
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 113
+          },
+          {
+            "id": "distance",
+            "value": 195
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 240
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b13",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Bastard Burgers Mikonkatu",
+      "track_id": "venue-bastard-burgers-mikonkatu",
+      "venue": {
+        "address": "Mikonkatu 6",
+        "badges": [],
+        "badges_v2": [],
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 25,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "20-30"
+        },
+        "estimate_range": "20-30",
+        "franchise": "",
+        "id": "6348098a9157ab2b10bdaf65",
+        "location": [
+          24.94534406,
+          60.16918801
+        ],
+        "name": "Bastard Burgers Mikonkatu",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 8.6,
+          "volume": 1404
+        },
+        "short_description": "Like a Bastard\u2122",
+        "show_wolt_plus": false,
+        "slug": "bastard-burgers-mikonkatu",
+        "tags": [
+          "burger",
+          "street food",
+          "vegan"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecb1",
+            "image": {
+              "blurhash": "UGKS|EMx~A^c]}M{ENxtRqIqRk9w0Nae%0Ia",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de658610-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymduwotizntk2otkuanbn.jpeg"
+            },
+            "name": "New York Meal",
+            "price": 1740
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecb0",
+            "image": {
+              "blurhash": "UBJZk,4p~AE2=;-S9a%2ESV?=_9cE3R.-ot6",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de645b46-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymduwotizndczndauanbn.jpeg"
+            },
+            "name": "The Bastard Meal",
+            "price": 1640
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecb2",
+            "image": {
+              "blurhash": "UILyW04p~nn4rCNK9^-Us?R+M}xt5Waew]Ne",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de66af36-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymduwoti0mtazntquanbn.jpeg"
+            },
+            "name": "London Meal",
+            "price": 1790
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337eca9",
+            "image": {
+              "blurhash": "UQLox~-i9v~8,nSiIqxWOGNKNHRQ%1R*M}so",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de5bdb6a-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymduwoti1mtk5mdauanbn.jpeg"
+            },
+            "name": "Double Lule\u00e5 With Bacon Meal",
+            "price": 2090
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecdb",
+            "image": {
+              "blurhash": "UTLMUx~nI[NKM_NGIqM|xYoz%LWB^iNtIpRl",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de979f1a-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymtaxmza4mjy1mduuanbn.jpeg"
+            },
+            "name": "The Bastard",
+            "price": 1140
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecb4",
+            "image": {
+              "blurhash": "UCIzw:03}[~TiMAK9#%LMkJW9x-A?r]i~A${",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/b4db6bf2-0565-11f0-abff-ce223a150d45_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymduwoti1mdgymjiuanbn.jpeg"
+            },
+            "name": "Helsinki Meal",
+            "price": 1890
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecde",
+            "image": {
+              "blurhash": "UIINWs.65Dwf,.RjNe-n}qMzIqNsO;xpnOrv",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/b50b31ca-0565-11f0-abff-ce223a150d45_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymtaxmza4mzcymtuuanbn.jpeg"
+            },
+            "name": "New York",
+            "price": 1240
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecab",
+            "image": {
+              "blurhash": "UNGaUJ~6%I=_-UNeEMW?-oIpE4EONdWEWCWr",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de5e3f90-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymtaxmzi4mjmymzyuanbn.jpeg"
+            },
+            "name": "Double Helsinki Meal",
+            "price": 2290
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecac",
+            "image": {
+              "blurhash": "UNK,Wi}*5A=wn,xuE3t7TLIqRktPIwR+X6ni",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de5f84cc-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymdkymdm0ntazmdauanbn.jpeg"
+            },
+            "name": "Double New York Meal",
+            "price": 2140
+          },
+          {
+            "currency": "EUR",
+            "id": "67dbda2656a6f0831337ecaa",
+            "image": {
+              "blurhash": "UbL:Sl}*5Er]spt2Rls:IKM|oyX5IrjEkCWB",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/634e6c37a5a5e8824e130685/de5d15de-105f-11f0-be79-7a1695a30c90_ahr0chm6ly9vymply3rzdg9yywdllmv1lwzyyw5rznvydc0xlm9yywnszwnsb3vklmnvbs9ul29yywnszwdidxbyb2qvyi9jq19gqkdcvv9tu18znde2nv9idc1zaw0tmjiwnjaymty0mta3lujbqi01ntgzntawyi1jnmu2ltrinmytyjnini0xzmfkowfjm2rjzjgvby9cquiyndeymdkymdm1mdcwntkuanbn.jpeg"
+            },
+            "name": "Double London Meal",
+            "price": 2190
+          }
+        ]
+      }
+    },
+    {
+      "filtering": {
+        "filters": [
+          {
+            "id": "primary",
+            "values": [
+              "street_food",
+              "burgers",
+              "vegetarian",
+              "american"
+            ]
+          },
+          {
+            "id": "price-range",
+            "values": [
+              "price-range-2"
+            ]
+          },
+          {
+            "id": "wolt-plus",
+            "values": []
+          }
+        ]
+      },
+      "image": {
+        "blurhash": "j1zSBa010f021d;dl3;k;:XdiS0A",
+        "url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      "link": {
+        "selected_delivery_method": "homedelivery",
+        "target": "5cf625dde24129e12f1ec781",
+        "target_sort": "delivers-to",
+        "target_title": "",
+        "title": "",
+        "type": "venue-id",
+        "venue_mainimage_blurhash": "j1zSBa010f021d;dl3;k;:XdiS0A",
+        "view_name": "venue"
+      },
+      "sorting": {
+        "sortables": [
+          {
+            "id": "delivery-price",
+            "value": 8
+          },
+          {
+            "id": "rating",
+            "value": 529
+          },
+          {
+            "id": "delivery-estimate",
+            "value": 259
+          },
+          {
+            "id": "distance",
+            "value": 189
+          },
+          {
+            "id": "preparation-estimate",
+            "value": 305
+          }
+        ]
+      },
+      "telemetry_object_id": "680cd2026d1ab94c2ef28b14",
+      "telemetry_venue_badges": [],
+      "template": "venue-large",
+      "title": "Friends & Brgrs Helsinki",
+      "track_id": "venue-friends-brgrs-helsinki",
+      "venue": {
+        "address": "Mikonkatu 8",
+        "badges": [],
+        "badges_v2": [],
+        "brand_image": {
+          "blurhash": "UcQv,kof-qbFkSayafay~XafM{j[VxkBoyj[",
+          "url": "https://imageproxy.wolt.com/mes-image/c68c6ea3-1368-4f19-9140-611a5b4a0b25/d056b816-8dae-4cec-ac48-6062830b54b1"
+        },
+        "categories": [],
+        "city": "",
+        "country": "FIN",
+        "currency": "EUR",
+        "delivers": true,
+        "delivery_highlight": false,
+        "delivery_price_highlight": false,
+        "estimate": 30,
+        "estimate_box": {
+          "subtitle": "min",
+          "template": "estimate",
+          "title": "25-35"
+        },
+        "estimate_range": "25-35",
+        "franchise": "",
+        "id": "5cf625dde24129e12f1ec781",
+        "location": [
+          24.94521171,
+          60.1696256
+        ],
+        "name": "Friends & Brgrs Helsinki",
+        "online": true,
+        "price_range": 2,
+        "product_line": "restaurant",
+        "promotions": [],
+        "rating": {
+          "rating": 3,
+          "score": 8.6,
+          "volume": 1500
+        },
+        "short_description": "Maailman parasta kotimaista",
+        "show_wolt_plus": false,
+        "slug": "friends-brgrs-helsinki",
+        "tags": [
+          "american",
+          "burger",
+          "hamburger"
+        ],
+        "venue_preview_items": [
+          {
+            "currency": "EUR",
+            "id": "11b9a7af6102adbfc0727a8d",
+            "image": {
+              "blurhash": "jcSceThm;;TcTullgPKX;;JS8yhm",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/2afd376a-ba86-11ee-9fca-b2b80e40b7dd_friendsmeal__1_.png"
+            },
+            "name": "Friends Brgr Meal",
+            "price": 1650
+          },
+          {
+            "currency": "EUR",
+            "id": "1806eb91e372eee5de1ac162",
+            "image": {
+              "blurhash": "jeRY6Qh4;;TcTtllh4KX;;KG8ylC",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/44bb21b2-ba86-11ee-847d-fa290b3c2bf8_doublefriendsmeal__1_.png"
+            },
+            "name": "Double Friends Brgr Meal",
+            "price": 1950
+          },
+          {
+            "currency": "EUR",
+            "id": "7b494fb56a42cbb634b7500c",
+            "image": {
+              "blurhash": "jdQH:Ohl;;TcTsh4h4Pc;;pl8yqW",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/538421da-ba86-11ee-a9e0-dec7f4fd52b8_comeal__1_.png"
+            },
+            "name": "Cheese & Onion Brgr Meal",
+            "price": 1550
+          },
+          {
+            "currency": "EUR",
+            "id": "10c7bb0d40431badff525e06",
+            "image": {
+              "blurhash": "jgTcqUh4;;TsqXCnFCpWXKKXcOhl",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/fc9295f8-ba87-11ee-ba65-fa290b3c2bf8_doublefriends__2_.png"
+            },
+            "name": "Double Friends Brgr",
+            "price": 1250
+          },
+          {
+            "currency": "EUR",
+            "id": "cc21afc73daee7696ed7a27f",
+            "image": {
+              "blurhash": "jdSsiUqG;;TcLch4llPc;;l58yGG",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/8db18190-ba86-11ee-8dd2-ae051be32dea_classicmeal__2_.png"
+            },
+            "name": "Classic Brgr Meal",
+            "price": 1650
+          },
+          {
+            "currency": "EUR",
+            "id": "6a3f53983b5eef1f08814f16",
+            "image": {
+              "blurhash": "",
+              "url": "https://imageproxy.wolt.com/assets/67eb81451f7e19009e2ac85b"
+            },
+            "name": "Burger of the month - Double BBQ Bacon",
+            "price": 1350
+          },
+          {
+            "currency": "EUR",
+            "id": "d2487d597f68d7edff9924f6",
+            "image": {
+              "blurhash": "",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/9d68033e-ba86-11ee-84c3-ae051be32dea_aiolimeal__2_.png"
+            },
+            "name": "Aioli Brgr Meal",
+            "price": 1650
+          },
+          {
+            "currency": "EUR",
+            "id": "bb5ce13d12e4b9b82797ddaa",
+            "image": {
+              "blurhash": "jiRI2OlW;;OWGYpCpBGGXKFV8Pmp",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/eaee2f42-ba87-11ee-9409-c6a269fdb6e4_friendsbrgr.png"
+            },
+            "name": "Friends Brgr",
+            "price": 950
+          },
+          {
+            "currency": "EUR",
+            "id": "bb572d51a07f890ee8b0eec5",
+            "image": {
+              "blurhash": "jdRbWOlC;;TsTth4h4Pc;;ll8yFW",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/64582c18-ba86-11ee-b46b-ae051be32dea_baconmeal__1_.png"
+            },
+            "name": "Bacon Brgr Meal",
+            "price": 1750
+          },
+          {
+            "currency": "EUR",
+            "id": "f251d84af06a804a35b693b8",
+            "image": {
+              "blurhash": "jeSYmUKX;;llPcpThlFV;;pm8yKV",
+              "url": "https://wolt-menu-images-cdn.wolt.com/menu-images/6285f468212fb7fea06b9cde/475bc8b6-ba88-11ee-bac6-c6a269fdb6e4_classic__1_.png"
+            },
+            "name": "Classic Brgr",
+            "price": 950
+          }
+        ]
+      }
+    }
+  ]
+}
