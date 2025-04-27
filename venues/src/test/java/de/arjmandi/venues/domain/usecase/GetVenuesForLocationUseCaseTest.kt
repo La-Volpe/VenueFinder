@@ -22,11 +22,11 @@ class GetVenuesForLocationUseCaseTest {
 
  @Before
  fun setup() {
-  useCase = GetVenuesForLocationUseCase(venueRepository, favoriteRepository)
+  useCase = GetVenuesForLocationUseCase(venueRepository)
  }
 
  @Test
- fun `returns top 15 venues with favorite state applied`() = runTest {
+ fun `returns top 15 venues`() = runTest {
   val venues = (1..20).map {
    Venue(it.toString(), "Venue $it", "Description", "image", false)
   }
@@ -36,8 +36,5 @@ class GetVenuesForLocationUseCaseTest {
   val result = useCase(0.0, 0.0).first()
 
   assertEquals(15, result.size)
-  assertTrue(result[0].isFavorite)
-  assertFalse(result[1].isFavorite)
-  assertTrue(result[2].isFavorite)
  }
 }

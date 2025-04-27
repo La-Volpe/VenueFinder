@@ -2,14 +2,13 @@ package de.arjmandi.venues.data.remote
 
 import de.arjmandi.venues.data.mapper.toDomain
 import de.arjmandi.venues.domain.model.Venue
+import de.arjmandi.venues.domain.repository.VenueRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 
-class VenueRemoteDataSource(
-    private val apiService: WoltApiService
-) {
-    fun getVenues(lat: Double, lon: Double): Flow<ApiResult<List<Venue>>> = flow {
+class VenueRemoteDataSource(private val apiService: WoltApiService) {
+    fun getVenuesWithApiResult(lat: Double, lon: Double): Flow<ApiResult<List<Venue>>> = flow {
         when (val result = apiService.getVenues(lat, lon)) {
             is ApiResult.Success -> {
                 val venues = result.data.sections

@@ -1,19 +1,16 @@
 package de.arjmandi.venues.domain.usecase
 
 import de.arjmandi.venues.domain.model.Venue
-import de.arjmandi.venues.domain.repository.FavoriteRepository
 import de.arjmandi.venues.domain.repository.VenueRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.take
+import kotlinx.coroutines.flow.map
 
 class GetVenuesForLocationUseCase(
-    private val venueRepository: VenueRepository,
-    private val favoriteRepository: FavoriteRepository
+    private val venueRepository: VenueRepository
 ) {
     suspend operator fun invoke(lat: Double, lon: Double): Flow<List<Venue>> {
-        val venuesFlow = venueRepository.getVenues(lat, lon)
-        return venuesFlow
-            .take(15)
+        return venueRepository.getVenues(lat, lon).map { venues ->
+            venues.take(15)
+        }
     }
 }

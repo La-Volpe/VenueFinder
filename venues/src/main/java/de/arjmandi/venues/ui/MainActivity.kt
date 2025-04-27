@@ -1,4 +1,4 @@
-package de.arjmandi.venues
+package de.arjmandi.venues.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

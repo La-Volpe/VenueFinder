@@ -41,7 +41,7 @@ class VenueRemoteDataSourceTestWithJson {
         dataSource = VenueRemoteDataSource(apiService)
         val expectedVenues = venues
         lateinit var dto: List<Venue>
-        dataSource.getVenues(60.1695, 24.9354).collectLatest {
+        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
             when (it) {
                 is ApiResult.Success -> {
                     dto = it.data

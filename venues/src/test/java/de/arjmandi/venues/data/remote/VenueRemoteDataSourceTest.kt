@@ -11,7 +11,6 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
-import org.junit.Before
 import org.junit.Test
 
 class VenueRemoteDataSourceTest {
@@ -39,12 +38,12 @@ class VenueRemoteDataSourceTest {
     }
 
     @Test
-    fun getVenues_receives_rateLimit() = runBlocking {
+    fun getVenues_WithApiResult_receives_rateLimit() = runBlocking {
         setupMockEngine(
             response = "",
             statusCode = HttpStatusCode.TooManyRequests
         )
-        dataSource.getVenues(60.1695, 24.9354).collectLatest {
+        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
             when (it) {
                 is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
                 is ApiResult.HttpError -> assert(it.code == 429) { "Expected rate limit error, but got ${it.code}." }
@@ -54,12 +53,12 @@ class VenueRemoteDataSourceTest {
     }
 
     @Test
-    fun getVenues_receives_notFound() = runBlocking {
+    fun getVenues_WithApiResult_receives_notFound() = runBlocking {
         setupMockEngine(
             response = "",
             statusCode = HttpStatusCode.NotFound
         )
-        dataSource.getVenues(60.1695, 24.9354).collectLatest {
+        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
             when (it) {
                 is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
                 is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
@@ -69,13 +68,13 @@ class VenueRemoteDataSourceTest {
     }
 
     @Test
-    fun getVenues_receives_responseButThereIsNoVenues() = runBlocking {
+    fun getVenues_receives_responseButThereIsNoVenuesWithApiResult() = runBlocking {
         setupMockEngine(
             response = noContentJson,
             statusCode = HttpStatusCode.OK,
             isJsonContent = true
         )
-        dataSource.getVenues(60.1695, 24.9354).collectLatest {
+        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
             when (it) {
                 is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
                 is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
