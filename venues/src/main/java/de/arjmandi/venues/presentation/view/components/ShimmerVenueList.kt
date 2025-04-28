@@ -38,10 +38,10 @@ fun ShimmerItem(modifier: Modifier = Modifier) {
 			initialValue = 0f,
 			targetValue = 1000f,
 			animationSpec =
-				infiniteRepeatable(
-					animation = tween(durationMillis = 1000, easing = LinearEasing),
-					repeatMode = RepeatMode.Restart,
-				),
+			infiniteRepeatable(
+				animation = tween(durationMillis = 1000, easing = LinearEasing),
+				repeatMode = RepeatMode.Restart,
+			),
 			label = "shimmerTranslate",
 		)
 
@@ -54,12 +54,12 @@ fun ShimmerItem(modifier: Modifier = Modifier) {
 
 	Column(
 		modifier =
-			modifier
-				.fillMaxWidth()
-				.padding(8.dp)
-				.clip(RoundedCornerShape(16.dp))
-				.background(brush)
-				.height(200.dp),
+		modifier
+			.fillMaxWidth()
+			.padding(8.dp)
+			.clip(RoundedCornerShape(16.dp))
+			.background(brush)
+			.height(200.dp),
 	) {}
 }
 

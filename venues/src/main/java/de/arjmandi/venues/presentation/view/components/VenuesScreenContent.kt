@@ -83,9 +83,9 @@ fun VenuesScreenContent(
 	) { innerPadding ->
 		Box(
 			modifier =
-				Modifier
-					.padding(innerPadding)
-					.fillMaxSize(),
+			Modifier
+				.padding(innerPadding)
+				.fillMaxSize(),
 		) {
 			transition.AnimatedContent(
 				transitionSpec = {
