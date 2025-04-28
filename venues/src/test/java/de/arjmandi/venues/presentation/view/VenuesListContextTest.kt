@@ -39,24 +39,25 @@ class VenuesListContextTest {
 	}
 
 	@Test
-	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() = runTest {
-		// Arrange
-		val targetIndex = 1
-		val coord = Location.coordinates[targetIndex]
-		val venue = Venue("v1", "Name", "Desc", "url")
-		coEvery { locationsChange.invoke() } returns flowOf(coord.latitude to coord.longitude)
-		coEvery { getNearbyVenues.invoke(coord.latitude, coord.longitude) } returns flowOf(listOf(venue))
+	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() =
+		runTest {
+			// Arrange
+			val targetIndex = 1
+			val coord = Location.coordinates[targetIndex]
+			val venue = Venue("v1", "Name", "Desc", "url")
+			coEvery { locationsChange.invoke() } returns flowOf(coord.latitude to coord.longitude)
+			coEvery { getNearbyVenues.invoke(coord.latitude, coord.longitude) } returns flowOf(listOf(venue))
 
-		// Act
-		val job = launch { context.observeLocationChanges() }
-		advanceUntilIdle()
+			// Act
+			val job = launch { context.observeLocationChanges() }
+			advanceUntilIdle()
 
-		// Assert
-		assertEquals(coord, context.currentLocation.value)
-		assertEquals(listOf(venue), context.venuesListState.value)
+			// Assert
+			assertEquals(coord, context.currentLocation.value)
+			assertEquals(listOf(venue), context.venuesListState.value)
 
-		job.cancel()
-	}
+			job.cancel()
+		}
 
 	@Test
 	fun observeFavorites_withFavorites_updatesFavoriteState() =

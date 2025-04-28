@@ -1,9 +1,7 @@
 package de.arjmandi.venues.presentation.view.components
 
-import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -36,10 +34,7 @@ import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.domain.model.Venue
 import de.arjmandi.venues.presentation.model.VenuesUiState
 
-@SuppressLint("UnusedCrossfadeTargetStateParameter")
-@OptIn(
-	ExperimentalMaterial3Api::class,
-)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VenuesScreenContent(
 	uiState: VenuesUiState,
@@ -51,16 +46,13 @@ fun VenuesScreenContent(
 	val locationName by remember(currentLocation) {
 		derivedStateOf {
 			when (uiState) {
-				is VenuesUiState.Success -> {
-					"📍 ${currentLocation?.displayName}"
-				}
-				is VenuesUiState.Error -> "📍 Error location"
-				VenuesUiState.Loading -> "📍 Loading location..."
+				is VenuesUiState.Success -> "\uD83D\uDCCD ${currentLocation?.displayName}"
+				is VenuesUiState.Error -> "\uD83D\uDCCD Error location"
+				VenuesUiState.Loading -> "\uD83D\uDCCD Loading location..."
 			}
 		}
 	}
 
-	// Animation for content transitions
 	val transition = updateTransition(targetState = uiState, label = "contentTransition")
 
 	Scaffold(
@@ -95,39 +87,34 @@ fun VenuesScreenContent(
 			) { targetState ->
 				when (targetState) {
 					VenuesUiState.Loading -> {
-						Crossfade(
-							targetState = Unit,
-							modifier = Modifier.align(Alignment.Center),
+						Box(
+							modifier = Modifier.fillMaxSize(),
+							contentAlignment = Alignment.TopCenter,
 						) {
-							Box(
-								modifier = Modifier.fillMaxSize(),
-								contentAlignment = Alignment.TopCenter,
-							) {
-								ShimmerVenueList()
-							}
+							ShimmerVenueList()
 						}
 					}
 					is VenuesUiState.Success -> {
 						if (targetState.venues.isEmpty()) {
-							Crossfade(
-								targetState = Unit,
-								modifier = Modifier.align(Alignment.Center),
+							Box(
+								modifier = Modifier.fillMaxSize(),
+								contentAlignment = Alignment.Center,
 							) {
 								Text("No venues found at this location")
 							}
 						} else {
 							AnimatedVenueList(
 								venues = targetState.venues,
-								modifier = Modifier.fillMaxSize(),
 								favorites = favorites,
 								onFavoriteToggle = onFavoriteToggle,
+								modifier = Modifier.fillMaxSize(),
 							)
 						}
 					}
 					is VenuesUiState.Error -> {
-						Crossfade(
-							targetState = Unit,
-							modifier = Modifier.align(Alignment.Center),
+						Box(
+							modifier = Modifier.fillMaxSize(),
+							contentAlignment = Alignment.Center,
 						) {
 							Text(
 								text = targetState.message,
@@ -141,13 +128,21 @@ fun VenuesScreenContent(
 	}
 }
 
+@Composable
+private fun FlashingFirstCharacterText(text: String) {
+	Text(
+		text = text,
+		style = MaterialTheme.typography.titleLarge,
+	)
+}
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun AnimatedVenueList(
 	venues: List<Venue>,
-	modifier: Modifier = Modifier,
 	favorites: Set<String> = emptySet(),
 	onFavoriteToggle: (String) -> Unit,
+	modifier: Modifier = Modifier,
 ) {
 	val listState = rememberLazyListState()
 
@@ -160,9 +155,8 @@ private fun AnimatedVenueList(
 		items(
 			items = venues,
 			key = { it.id },
-			contentType = { it }, // Helps with item animations
+			contentType = { it },
 		) { venue ->
-			// Each item gets its own animation
 			AnimatedVisibility(
 				visible = true,
 				enter = fadeIn() + slideInVertically(),
