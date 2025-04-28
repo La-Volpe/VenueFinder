@@ -1,5 +1,6 @@
 package de.arjmandi.venues.presentation.view
 
+import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.domain.model.Venue
 import de.arjmandi.venues.domain.usecase.GetFavoritedVenuesUseCase
 import de.arjmandi.venues.domain.usecase.GetVenuesForLocationUseCase
@@ -38,25 +39,24 @@ class VenuesListContextTest {
 	}
 
 	@Test
-	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() =
-		runTest {
-			// Arrange
-			val location = 10.0 to 20.0
-			val venue = Venue("v1", "Name", "Desc", "url")
-			coEvery { locationsChange.invoke() } returns flowOf(location)
-			coEvery { getNearbyVenues.invoke(location.first, location.second) } returns flowOf(listOf(venue))
+	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() = runTest {
+		// Arrange
+		val targetIndex = 1
+		val coord = Location.coordinates[targetIndex]
+		val venue = Venue("v1", "Name", "Desc", "url")
+		coEvery { locationsChange.invoke() } returns flowOf(coord.latitude to coord.longitude)
+		coEvery { getNearbyVenues.invoke(coord.latitude, coord.longitude) } returns flowOf(listOf(venue))
 
-			// Act
-			val job = launch { context.observeLocationChanges() }
-			// give the collectLatest a chance to run
-			advanceUntilIdle()
+		// Act
+		val job = launch { context.observeLocationChanges() }
+		advanceUntilIdle()
 
-			// Assert
-			assertEquals(location, context.currentLocation.value)
-			assertEquals(listOf(venue), context.venuesListState.value)
+		// Assert
+		assertEquals(coord, context.currentLocation.value)
+		assertEquals(listOf(venue), context.venuesListState.value)
 
-			job.cancel()
-		}
+		job.cancel()
+	}
 
 	@Test
 	fun observeFavorites_withFavorites_updatesFavoriteState() =

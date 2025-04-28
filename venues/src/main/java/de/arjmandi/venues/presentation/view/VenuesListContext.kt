@@ -1,5 +1,6 @@
 package de.arjmandi.venues.presentation.view
 
+import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.domain.model.Venue
 import de.arjmandi.venues.domain.usecase.GetFavoritedVenuesUseCase
 import de.arjmandi.venues.domain.usecase.GetVenuesForLocationUseCase
@@ -16,8 +17,8 @@ class VenuesListContext(
 	private val getFavoritedVenues: GetFavoritedVenuesUseCase,
 ) {
 	// 🟢 Location
-	private val currentLocationState: MutableStateFlow<Pair<Double, Double>> = MutableStateFlow(Pair(0.0, 0.0))
-	val currentLocation: StateFlow<Pair<Double, Double>> = currentLocationState
+	private val currentLocationState: MutableStateFlow<Location> = MutableStateFlow(Location.coordinates[0])
+	val currentLocation: StateFlow<Location> = currentLocationState
 
 	// 🟢 Venues
 	private val _venuesListState: MutableStateFlow<List<Venue>> = MutableStateFlow(emptyList())
@@ -39,8 +40,11 @@ class VenuesListContext(
 
 	suspend fun observeLocationChanges() {
 		locationsChange.invoke().collectLatest { location ->
-			currentLocationState.value = location
 			getVenuesList(location)
+			currentLocationState.value =
+				Location.coordinates.first {
+					location.first == it.latitude && location.second == it.longitude
+				}
 		}
 	}
 

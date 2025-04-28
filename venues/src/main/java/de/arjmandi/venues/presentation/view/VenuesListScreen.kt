@@ -1,3 +1,26 @@
 package de.arjmandi.venues.presentation.view
 
-class VenuesListScreen
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import de.arjmandi.venues.presentation.view.components.VenuesScreenContent
+
+@Composable
+fun VenuesListScreen(viewModel: VenuesListViewModel) {
+	val uiState by viewModel.uiState.collectAsState()
+	val currentLocation by viewModel.currentLocation.collectAsState()
+	val favoriteListState by viewModel.favoriteList.collectAsState()
+
+	LaunchedEffect(uiState) {
+		viewModel.getVenues()
+	}
+
+	VenuesScreenContent(
+		uiState = uiState,
+		currentLocation = currentLocation,
+		favorites = favoriteListState,
+	) {
+		viewModel.toggleFavorites(it)
+	}
+}
