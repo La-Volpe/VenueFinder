@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
     ksp(libs.room.compiler)
+    implementation(libs.coil)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)

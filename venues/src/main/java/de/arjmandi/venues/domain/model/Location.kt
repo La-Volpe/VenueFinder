@@ -6,9 +6,6 @@ data class Location(
     val displayName: String = "",
 ) {
     companion object {
-        fun fromCoordinates(latitude: Double, longitude: Double): Location {
-            return Location(latitude, longitude)
-        }
         val coordinates = listOf(
         Location(60.169418, 24.931618, "Kamppi Chapel of Silence"),
         Location(60.169818, 24.932906, "Narinkka Square"),
