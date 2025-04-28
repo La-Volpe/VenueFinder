@@ -139,10 +139,10 @@ private fun FlashingFirstCharacterText(text: String) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun AnimatedVenueList(
+	modifier: Modifier = Modifier,
 	venues: List<Venue>,
 	favorites: Set<String> = emptySet(),
 	onFavoriteToggle: (String) -> Unit,
-	modifier: Modifier = Modifier,
 ) {
 	val listState = rememberLazyListState()
 
