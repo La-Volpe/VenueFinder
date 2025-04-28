@@ -32,80 +32,80 @@ import de.arjmandi.venues.domain.model.Venue
 
 @Composable
 fun VenueCard(
-    venue: Venue,
-    isFavorite: Boolean = false,
-    onFavoriteToggle: (String) -> Unit = {},
+	venue: Venue,
+	isFavorite: Boolean = false,
+	onFavoriteToggle: (String) -> Unit = {},
 ) {
-    Card(
-        modifier =
-            Modifier
-                .padding(8.dp)
-                .fillMaxWidth()
-                .shadow(4.dp, shape = RoundedCornerShape(16.dp)),
-        shape = RoundedCornerShape(16.dp),
-    ) {
-        Box {
-            Image(
-                painter = rememberAsyncImagePainter(venue.imageUrl),
-                contentDescription = venue.name,
-                contentScale = ContentScale.Crop,
-                modifier =
-                    Modifier
-                        .fillMaxWidth()
-                        .height(200.dp),
-            )
+	Card(
+		modifier =
+			Modifier
+				.padding(8.dp)
+				.fillMaxWidth()
+				.shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+		shape = RoundedCornerShape(16.dp),
+	) {
+		Box {
+			Image(
+				painter = rememberAsyncImagePainter(venue.imageUrl),
+				contentDescription = venue.name,
+				contentScale = ContentScale.Crop,
+				modifier =
+					Modifier
+						.fillMaxWidth()
+						.height(200.dp),
+			)
 
-            IconButton(
-                onClick = { onFavoriteToggle(venue.id) },
-                modifier =
-                    Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(8.dp)
-                        .size(36.dp)
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colorScheme.surface),
-            ) {
-                Icon(
-                    imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                    contentDescription = "Favorite",
-                    tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-                )
-            }
-        }
+			IconButton(
+				onClick = { onFavoriteToggle(venue.id) },
+				modifier =
+					Modifier
+						.align(Alignment.TopEnd)
+						.padding(8.dp)
+						.size(36.dp)
+						.clip(CircleShape)
+						.background(MaterialTheme.colorScheme.surface),
+			) {
+				Icon(
+					imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
+					contentDescription = "Favorite",
+					tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+				)
+			}
+		}
 
-        Column(modifier = Modifier.padding(12.dp)) {
-            Text(
-                text = venue.name,
-                style = MaterialTheme.typography.titleMedium,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-            Text(
-                text = venue.shortDescription,
-                style = MaterialTheme.typography.bodySmall,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-            )
-        }
-    }
+		Column(modifier = Modifier.padding(12.dp)) {
+			Text(
+				text = venue.name,
+				style = MaterialTheme.typography.titleMedium,
+				maxLines = 1,
+				overflow = TextOverflow.Ellipsis,
+			)
+			Text(
+				text = venue.shortDescription,
+				style = MaterialTheme.typography.bodySmall,
+				maxLines = 2,
+				overflow = TextOverflow.Ellipsis,
+			)
+		}
+	}
 }
 
 @Preview(showBackground = true)
 @Composable
 fun VenueCardPreview() {
-    val venue =
-        Venue(
-            id = "67c571f5dafd795cde3f22e1",
-            name = "Hesburger Helsinki Pasila Tripla",
-            shortDescription = "Herkulliset hampurilaiset & tortillat",
-            imageUrl = "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4",
-        )
+	val venue =
+		Venue(
+			id = "67c571f5dafd795cde3f22e1",
+			name = "Hesburger Helsinki Pasila Tripla",
+			shortDescription = "Herkulliset hampurilaiset & tortillat",
+			imageUrl = "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4",
+		)
 
-    MaterialTheme {
-        VenueCard(
-            venue = venue,
-            isFavorite = true,
-            onFavoriteToggle = {},
-        )
-    }
+	MaterialTheme {
+		VenueCard(
+			venue = venue,
+			isFavorite = true,
+			onFavoriteToggle = {},
+		)
+	}
 }

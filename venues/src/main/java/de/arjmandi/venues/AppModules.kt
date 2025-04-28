@@ -22,44 +22,50 @@ import kotlinx.serialization.json.Json
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-val domainModule = module {
-    factory { GetFavoritedVenuesUseCase(get<FavoriteRepository>()) }
-    factory { GetVenuesForLocationUseCase(get<VenueRepository>()) }
-    factory { ObserveLocationUpdatesUseCase(get<LocationRepository>()) }
-    factory { ToggleFavoriteUseCase(get<FavoriteRepository>())}
-}
+val domainModule =
+	module {
+		factory { GetFavoritedVenuesUseCase(get<FavoriteRepository>()) }
+		factory { GetVenuesForLocationUseCase(get<VenueRepository>()) }
+		factory { ObserveLocationUpdatesUseCase(get<LocationRepository>()) }
+		factory { ToggleFavoriteUseCase(get<FavoriteRepository>()) }
+	}
 
-val dataModule = module {
-    single {
-        Room.databaseBuilder(
-            androidContext(),
-            AppDatabase::class.java,
-            "venues-db"
-        ).build()
-    }
-    single { get<AppDatabase>().favoriteDao() }
+val dataModule =
+	module {
+		single {
+			Room
+				.databaseBuilder(
+					androidContext(),
+					AppDatabase::class.java,
+					"venues-db",
+				).build()
+		}
+		single { get<AppDatabase>().favoriteDao() }
 
-    // Repository implementations
-    single<FavoriteRepository> { FavoriteRepositoryImpl(get()) }
-    single<VenueRepository> { VenueRepositoryImpl(get()) }
-    single<LocationRepository> { LocationRepositoryImpl() }
+		// Repository implementations
+		single<FavoriteRepository> { FavoriteRepositoryImpl(get()) }
+		single<VenueRepository> { VenueRepositoryImpl(get()) }
+		single<LocationRepository> { LocationRepositoryImpl() }
 
-    single {
-        HttpClient(CIO) {
-            install(ContentNegotiation) {
-                json(Json {
-                    ignoreUnknownKeys = true
-                })
-            }
-        }
-    }
+		single {
+			HttpClient(CIO) {
+				install(ContentNegotiation) {
+					json(
+						Json {
+							ignoreUnknownKeys = true
+						},
+					)
+				}
+			}
+		}
 
-    // API Service
-    single { WoltApiService(get()) }
-    single { VenueRemoteDataSource(get()) }
-}
+		// API Service
+		single { WoltApiService(get()) }
+		single { VenueRemoteDataSource(get()) }
+	}
 
-val appModules = listOf(
-    domainModule,
-    dataModule
-)
+val appModules =
+	listOf(
+		domainModule,
+		dataModule,
+	)

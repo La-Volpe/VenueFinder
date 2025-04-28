@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class VenueResponseDto(
-    @SerialName("sections")
-    val sections: List<SectionDto>,
+	@SerialName("sections")
+	val sections: List<SectionDto>,
 )

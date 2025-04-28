@@ -11,21 +11,21 @@ import org.junit.Before
 import org.junit.Test
 
 class ObserveLocationUpdatesUseCaseTest {
+	private val locationRepository: LocationRepository = mockk()
+	private lateinit var useCase: ObserveLocationUpdatesUseCase
 
- private val locationRepository: LocationRepository = mockk()
- private lateinit var useCase: ObserveLocationUpdatesUseCase
+	@Before
+	fun setup() {
+		useCase = ObserveLocationUpdatesUseCase(locationRepository)
+	}
 
- @Before
- fun setup() {
-  useCase = ObserveLocationUpdatesUseCase(locationRepository)
- }
+	@Test
+	fun `emits location coordinates from repository`() =
+		runTest {
+			val flow = flowOf(60.0 to 24.0)
+			every { locationRepository.locationFlow } returns flow
 
- @Test
- fun `emits location coordinates from repository`() = runTest {
-  val flow = flowOf(60.0 to 24.0)
-  every { locationRepository.locationFlow } returns flow
-
-  val result = useCase().first()
-  assertEquals(60.0 to 24.0, result)
- }
+			val result = useCase().first()
+			assertEquals(60.0 to 24.0, result)
+		}
 }

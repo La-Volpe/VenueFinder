@@ -19,70 +19,73 @@ import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class VenuesListContextTest {
+	private val locationsChange = mockk<ObserveLocationUpdatesUseCase>()
+	private val getNearbyVenues = mockk<GetVenuesForLocationUseCase>()
+	private val toggleFavoriteUseCase = mockk<ToggleFavoriteUseCase>()
+	private val getFavoritedVenuesUseCase = mockk<GetFavoritedVenuesUseCase>()
 
-    private val locationsChange = mockk<ObserveLocationUpdatesUseCase>()
-    private val getNearbyVenues = mockk<GetVenuesForLocationUseCase>()
-    private val toggleFavoriteUseCase = mockk<ToggleFavoriteUseCase>()
-    private val getFavoritedVenuesUseCase = mockk<GetFavoritedVenuesUseCase>()
+	private lateinit var context: VenuesListContext
 
-    private lateinit var context: VenuesListContext
+	@Before
+	fun setup() {
+		context =
+			VenuesListContext(
+				locationsChange = locationsChange,
+				getNearbyVenues = getNearbyVenues,
+				toggleFavorite = toggleFavoriteUseCase,
+				getFavoritedVenues = getFavoritedVenuesUseCase,
+			)
+	}
 
-    @Before
-    fun setup() {
-        context = VenuesListContext(
-            locationsChange = locationsChange,
-            getNearbyVenues = getNearbyVenues,
-            toggleFavorite = toggleFavoriteUseCase,
-            getFavoritedVenues = getFavoritedVenuesUseCase
-        )
-    }
+	@Test
+	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() =
+		runTest {
+			// Arrange
+			val location = 10.0 to 20.0
+			val venue = Venue("v1", "Name", "Desc", "url")
+			coEvery { locationsChange.invoke() } returns flowOf(location)
+			coEvery { getNearbyVenues.invoke(location.first, location.second) } returns flowOf(listOf(venue))
 
-    @Test
-    fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() = runTest {
-        // Arrange
-        val location = 10.0 to 20.0
-        val venue = Venue("v1", "Name", "Desc", "url")
-        coEvery { locationsChange.invoke() } returns flowOf(location)
-        coEvery { getNearbyVenues.invoke(location.first, location.second) } returns flowOf(listOf(venue))
+			// Act
+			val job = launch { context.observeLocationChanges() }
+			// give the collectLatest a chance to run
+			advanceUntilIdle()
 
-        // Act
-        val job = launch { context.observeLocationChanges() }
-        // give the collectLatest a chance to run
-        advanceUntilIdle()
+			// Assert
+			assertEquals(location, context.currentLocation.value)
+			assertEquals(listOf(venue), context.venuesListState.value)
 
-        // Assert
-        assertEquals(location, context.currentLocation.value)
-        assertEquals(listOf(venue), context.venuesListState.value)
+			job.cancel()
+		}
 
-        job.cancel()
-    }
+	@Test
+	fun observeFavorites_withFavorites_updatesFavoriteState() =
+		runTest {
+			// Arrange
+			val favorites = setOf("v1")
+			coEvery { getFavoritedVenuesUseCase.invoke() } returns flowOf(favorites)
 
-    @Test
-    fun observeFavorites_withFavorites_updatesFavoriteState() = runTest {
-        // Arrange
-        val favorites = setOf("v1")
-        coEvery { getFavoritedVenuesUseCase.invoke() } returns flowOf(favorites)
+			// Act
+			val job = launch { context.observeFavorites() }
+			advanceUntilIdle()
 
-        // Act
-        val job = launch { context.observeFavorites() }
-        advanceUntilIdle()
+			// Assert
+			assertEquals(favorites, context.favoriteVenuesState.value)
 
-        // Assert
-        assertEquals(favorites, context.favoriteVenuesState.value)
+			job.cancel()
+		}
 
-        job.cancel()
-    }
+	@Test
+	fun toggleFavorite_withValidVenueId_invokesUseCase() =
+		runTest {
+			// Arrange
+			val id = "v1"
+			coEvery { toggleFavoriteUseCase.invoke(id) } returns Unit
 
-    @Test
-    fun toggleFavorite_withValidVenueId_invokesUseCase() = runTest {
-        // Arrange
-        val id = "v1"
-        coEvery { toggleFavoriteUseCase.invoke(id) } returns Unit
+			// Act
+			context.toggleFavorite(id)
 
-        // Act
-        context.toggleFavorite(id)
-
-        // Assert
-        coVerify(exactly = 1) { toggleFavoriteUseCase.invoke(id) }
-    }
+			// Assert
+			coVerify(exactly = 1) { toggleFavoriteUseCase.invoke(id) }
+		}
 }

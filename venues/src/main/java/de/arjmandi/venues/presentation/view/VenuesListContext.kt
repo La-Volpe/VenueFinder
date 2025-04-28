@@ -10,43 +10,43 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 
 class VenuesListContext(
-    private val locationsChange: ObserveLocationUpdatesUseCase,
-    private val getNearbyVenues: GetVenuesForLocationUseCase,
-    private val toggleFavorite: ToggleFavoriteUseCase,
-    private val getFavoritedVenues: GetFavoritedVenuesUseCase
+	private val locationsChange: ObserveLocationUpdatesUseCase,
+	private val getNearbyVenues: GetVenuesForLocationUseCase,
+	private val toggleFavorite: ToggleFavoriteUseCase,
+	private val getFavoritedVenues: GetFavoritedVenuesUseCase,
 ) {
-    // 🟢 Location
-    private val currentLocationState: MutableStateFlow<Pair<Double, Double>> = MutableStateFlow(Pair(0.0, 0.0))
-    val currentLocation: StateFlow<Pair<Double, Double>> = currentLocationState
+	// 🟢 Location
+	private val currentLocationState: MutableStateFlow<Pair<Double, Double>> = MutableStateFlow(Pair(0.0, 0.0))
+	val currentLocation: StateFlow<Pair<Double, Double>> = currentLocationState
 
-    // 🟢 Venues
-    private val _venuesListState: MutableStateFlow<List<Venue>> = MutableStateFlow(emptyList())
-    val venuesListState: StateFlow<List<Venue>> = _venuesListState
+	// 🟢 Venues
+	private val _venuesListState: MutableStateFlow<List<Venue>> = MutableStateFlow(emptyList())
+	val venuesListState: StateFlow<List<Venue>> = _venuesListState
 
-    // 🟢 Favorite Venues
-    private val _favoriteVenuesState: MutableStateFlow<Set<String>> = MutableStateFlow(emptySet())
-    val favoriteVenuesState: StateFlow<Set<String>> = _favoriteVenuesState
+	// 🟢 Favorite Venues
+	private val _favoriteVenuesState: MutableStateFlow<Set<String>> = MutableStateFlow(emptySet())
+	val favoriteVenuesState: StateFlow<Set<String>> = _favoriteVenuesState
 
-    suspend fun toggleFavorite(venueId: String) {
-        toggleFavorite.invoke(venueId)
-    }
+	suspend fun toggleFavorite(venueId: String) {
+		toggleFavorite.invoke(venueId)
+	}
 
-    private suspend fun getVenuesList(location: Pair<Double, Double>) {
-        getNearbyVenues.invoke(location.first, location.second).collectLatest { venues ->
-            _venuesListState.value = venues
-        }
-    }
+	private suspend fun getVenuesList(location: Pair<Double, Double>) {
+		getNearbyVenues.invoke(location.first, location.second).collectLatest { venues ->
+			_venuesListState.value = venues
+		}
+	}
 
-    suspend fun observeLocationChanges() {
-        locationsChange.invoke().collectLatest { location ->
-            currentLocationState.value = location
-            getVenuesList(location)
-        }
-    }
+	suspend fun observeLocationChanges() {
+		locationsChange.invoke().collectLatest { location ->
+			currentLocationState.value = location
+			getVenuesList(location)
+		}
+	}
 
-    suspend fun observeFavorites() {
-        getFavoritedVenues.invoke().collectLatest {
-            _favoriteVenuesState.value = it
-        }
-    }
+	suspend fun observeFavorites() {
+		getFavoritedVenues.invoke().collectLatest {
+			_favoriteVenuesState.value = it
+		}
+	}
 }

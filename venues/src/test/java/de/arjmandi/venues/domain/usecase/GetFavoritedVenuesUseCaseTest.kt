@@ -11,25 +11,25 @@ import org.junit.Before
 import kotlin.test.Test
 
 class GetFavoritedVenuesUseCaseTest {
+	private lateinit var useCase: GetFavoritedVenuesUseCase
+	private val favoriteRepository: FavoriteRepository = mockk()
 
-    private lateinit var useCase: GetFavoritedVenuesUseCase
-    private val favoriteRepository: FavoriteRepository = mockk()
+	@Before
+	fun setup() {
+		useCase = GetFavoritedVenuesUseCase(favoriteRepository)
+	}
 
-    @Before
-    fun setup() {
-        useCase = GetFavoritedVenuesUseCase(favoriteRepository)
-    }
+	@Test
+	fun `should return favorited venue ids`() =
+		runTest {
+			// Given
+			val expectedFavorites = setOf("venue-1", "venue-2", "venue-3")
+			coEvery { favoriteRepository.getAllFavorite() } returns flowOf(expectedFavorites)
 
-    @Test
-    fun `should return favorited venue ids`() = runTest {
-        // Given
-        val expectedFavorites = setOf("venue-1", "venue-2", "venue-3")
-        coEvery { favoriteRepository.getAllFavorite() } returns flowOf(expectedFavorites)
+			// When
+			val result = useCase().first()
 
-        // When
-        val result = useCase().first()
-
-        // Then
-        assertEquals(expectedFavorites, result)
-    }
+			// Then
+			assertEquals(expectedFavorites, result)
+		}
 }

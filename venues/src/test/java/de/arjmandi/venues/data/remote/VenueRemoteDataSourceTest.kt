@@ -14,76 +14,85 @@ import kotlinx.serialization.json.Json
 import org.junit.Test
 
 class VenueRemoteDataSourceTest {
-    private lateinit var mockEngine: MockEngine
-    private lateinit var client: HttpClient
-    private lateinit var apiService: WoltApiService
-    private lateinit var dataSource: VenueRemoteDataSource
+	private lateinit var mockEngine: MockEngine
+	private lateinit var client: HttpClient
+	private lateinit var apiService: WoltApiService
+	private lateinit var dataSource: VenueRemoteDataSource
 
-    private fun setupMockEngine(response: String, statusCode: HttpStatusCode, isJsonContent: Boolean = false) {
-        mockEngine = MockEngine {
-            respond(
-                content = response,
-                status = statusCode,
-                headers = headersOf(HttpHeaders.ContentType, "application/json")
-            )
-        }
-        client = HttpClient(mockEngine) {
-            install(ContentNegotiation) {
-                json(Json { ignoreUnknownKeys = true })
-            }
-        }
-        apiService = WoltApiService(client)
-        dataSource = VenueRemoteDataSource(apiService)
+	private fun setupMockEngine(
+		response: String,
+		statusCode: HttpStatusCode,
+		isJsonContent: Boolean = false,
+	) {
+		mockEngine =
+			MockEngine {
+				respond(
+					content = response,
+					status = statusCode,
+					headers = headersOf(HttpHeaders.ContentType, "application/json"),
+				)
+			}
+		client =
+			HttpClient(mockEngine) {
+				install(ContentNegotiation) {
+					json(Json { ignoreUnknownKeys = true })
+				}
+			}
+		apiService = WoltApiService(client)
+		dataSource = VenueRemoteDataSource(apiService)
+	}
 
-    }
+	@Test
+	fun getVenues_WithApiResult_receives_rateLimit() =
+		runBlocking {
+			setupMockEngine(
+				response = "",
+				statusCode = HttpStatusCode.TooManyRequests,
+			)
+			dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
+				when (it) {
+					is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
+					is ApiResult.HttpError -> assert(it.code == 429) { "Expected rate limit error, but got ${it.code}." }
+					is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error." }
+				}
+			}
+		}
 
-    @Test
-    fun getVenues_WithApiResult_receives_rateLimit() = runBlocking {
-        setupMockEngine(
-            response = "",
-            statusCode = HttpStatusCode.TooManyRequests
-        )
-        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
-            when (it) {
-                is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
-                is ApiResult.HttpError -> assert(it.code == 429) { "Expected rate limit error, but got ${it.code}." }
-                is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error." }
-            }
-        }
-    }
+	@Test
+	fun getVenues_WithApiResult_receives_notFound() =
+		runBlocking {
+			setupMockEngine(
+				response = "",
+				statusCode = HttpStatusCode.NotFound,
+			)
+			dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
+				when (it) {
+					is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
+					is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
+					is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error." }
+				}
+			}
+		}
 
-    @Test
-    fun getVenues_WithApiResult_receives_notFound() = runBlocking {
-        setupMockEngine(
-            response = "",
-            statusCode = HttpStatusCode.NotFound
-        )
-        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
-            when (it) {
-                is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
-                is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
-                is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error." }
-            }
-        }
-    }
+	@Test
+	fun getVenues_receives_responseButThereIsNoVenuesWithApiResult() =
+		runBlocking {
+			setupMockEngine(
+				response = noContentJson,
+				statusCode = HttpStatusCode.OK,
+				isJsonContent = true,
+			)
+			dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
+				when (it) {
+					is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
+					is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
+					is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error. ${it.exception.message}" }
+				}
+			}
+		}
 
-    @Test
-    fun getVenues_receives_responseButThereIsNoVenuesWithApiResult() = runBlocking {
-        setupMockEngine(
-            response = noContentJson,
-            statusCode = HttpStatusCode.OK,
-            isJsonContent = true
-        )
-        dataSource.getVenuesWithApiResult(60.1695, 24.9354).collectLatest {
-            when (it) {
-                is ApiResult.Success -> assert(false) { "Expected an error, but got success." }
-                is ApiResult.HttpError -> assert(it.code == 404) { "Expected not found error, but got ${it.code}." }
-                is ApiResult.NetworkError -> assert(false) { "Expected a success, but got network error. ${it.exception.message}" }
-            }
-        }
-    }
-
-    val noContentJson = """
+	val noContentJson =
+		"""
         {
     "created": {
         "$/date": 1745777425702
@@ -110,5 +119,5 @@ class VenueRemoteDataSourceTest {
     "show_map": false,
     "track_id": "discovery:restaurants"
 }
-    """.trimIndent()
+		""".trimIndent()
 }

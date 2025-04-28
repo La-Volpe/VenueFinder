@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class VenuesListViewModel(
-    val venuesListContext: VenuesListContext
-): ViewModel() {
-    private val _uiState = MutableStateFlow<VenuesUiState>(VenuesUiState.Loading)
-    val uiState: StateFlow<VenuesUiState> = _uiState
+	val venuesListContext: VenuesListContext,
+) : ViewModel() {
+	private val _uiState = MutableStateFlow<VenuesUiState>(VenuesUiState.Loading)
+	val uiState: StateFlow<VenuesUiState> = _uiState
 }

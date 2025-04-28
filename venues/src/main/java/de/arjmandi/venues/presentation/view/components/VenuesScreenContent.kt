@@ -38,143 +38,143 @@ import de.arjmandi.venues.presentation.model.VenuesUiState
 
 @SuppressLint("UnusedCrossfadeTargetStateParameter")
 @OptIn(
-    ExperimentalMaterial3Api::class,
+	ExperimentalMaterial3Api::class,
 )
 @Composable
 fun VenuesScreenContent(
-    uiState: VenuesUiState,
-    currentLocation: Location?,
-    modifier: Modifier = Modifier,
-    favorites: Set<String> = emptySet(),
-    onFavoriteToggle: (String) -> Unit = {},
+	uiState: VenuesUiState,
+	currentLocation: Location?,
+	modifier: Modifier = Modifier,
+	favorites: Set<String> = emptySet(),
+	onFavoriteToggle: (String) -> Unit = {},
 ) {
-    val locationName by remember(currentLocation) {
-        derivedStateOf {
-            when (uiState) {
-                is VenuesUiState.Success -> {
-                    "📍 ${currentLocation?.displayName}"
-                }
-                is VenuesUiState.Error -> "📍 Error location"
-                VenuesUiState.Loading -> "📍 Loading location..."
-            }
-        }
-    }
+	val locationName by remember(currentLocation) {
+		derivedStateOf {
+			when (uiState) {
+				is VenuesUiState.Success -> {
+					"📍 ${currentLocation?.displayName}"
+				}
+				is VenuesUiState.Error -> "📍 Error location"
+				VenuesUiState.Loading -> "📍 Loading location..."
+			}
+		}
+	}
 
-    // Animation for content transitions
-    val transition = updateTransition(targetState = uiState, label = "contentTransition")
+	// Animation for content transitions
+	val transition = updateTransition(targetState = uiState, label = "contentTransition")
 
-    Scaffold(
-        modifier = modifier,
-        topBar = {
-            TopAppBar(
-                title = {
-                    when (uiState) {
-                        VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
-                        else ->
-                            Text(
-                                text = locationName,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
-                            )
-                    }
-                },
-            )
-        },
-    ) { innerPadding ->
-        Box(
-            modifier =
-                Modifier
-                    .padding(innerPadding)
-                    .fillMaxSize(),
-        ) {
-            transition.AnimatedContent(
-                transitionSpec = {
-                    fadeIn() + slideInVertically { -40 } togetherWith
-                        fadeOut() + slideOutVertically { 40 }
-                },
-            ) { targetState ->
-                when (targetState) {
-                    VenuesUiState.Loading -> {
-                        Crossfade(
-                            targetState = Unit,
-                            modifier = Modifier.align(Alignment.Center),
-                        ) {
-                            Box(
-                                modifier = Modifier.fillMaxSize(),
-                                contentAlignment = Alignment.TopCenter,
-                            ) {
-                                ShimmerVenueList()
-                            }
-                        }
-                    }
-                    is VenuesUiState.Success -> {
-                        if (targetState.venues.isEmpty()) {
-                            Crossfade(
-                                targetState = Unit,
-                                modifier = Modifier.align(Alignment.Center),
-                            ) {
-                                Text("No venues found at this location")
-                            }
-                        } else {
-                            AnimatedVenueList(
-                                venues = targetState.venues,
-                                modifier = Modifier.fillMaxSize(),
-                                favorites = favorites,
-                                onFavoriteToggle = onFavoriteToggle,
-                            )
-                        }
-                    }
-                    is VenuesUiState.Error -> {
-                        Crossfade(
-                            targetState = Unit,
-                            modifier = Modifier.align(Alignment.Center),
-                        ) {
-                            Text(
-                                text = targetState.message,
-                                color = MaterialTheme.colorScheme.error,
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
+	Scaffold(
+		modifier = modifier,
+		topBar = {
+			TopAppBar(
+				title = {
+					when (uiState) {
+						VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
+						else ->
+							Text(
+								text = locationName,
+								maxLines = 1,
+								overflow = TextOverflow.Ellipsis,
+							)
+					}
+				},
+			)
+		},
+	) { innerPadding ->
+		Box(
+			modifier =
+				Modifier
+					.padding(innerPadding)
+					.fillMaxSize(),
+		) {
+			transition.AnimatedContent(
+				transitionSpec = {
+					fadeIn() + slideInVertically { -40 } togetherWith
+						fadeOut() + slideOutVertically { 40 }
+				},
+			) { targetState ->
+				when (targetState) {
+					VenuesUiState.Loading -> {
+						Crossfade(
+							targetState = Unit,
+							modifier = Modifier.align(Alignment.Center),
+						) {
+							Box(
+								modifier = Modifier.fillMaxSize(),
+								contentAlignment = Alignment.TopCenter,
+							) {
+								ShimmerVenueList()
+							}
+						}
+					}
+					is VenuesUiState.Success -> {
+						if (targetState.venues.isEmpty()) {
+							Crossfade(
+								targetState = Unit,
+								modifier = Modifier.align(Alignment.Center),
+							) {
+								Text("No venues found at this location")
+							}
+						} else {
+							AnimatedVenueList(
+								venues = targetState.venues,
+								modifier = Modifier.fillMaxSize(),
+								favorites = favorites,
+								onFavoriteToggle = onFavoriteToggle,
+							)
+						}
+					}
+					is VenuesUiState.Error -> {
+						Crossfade(
+							targetState = Unit,
+							modifier = Modifier.align(Alignment.Center),
+						) {
+							Text(
+								text = targetState.message,
+								color = MaterialTheme.colorScheme.error,
+							)
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun AnimatedVenueList(
-    venues: List<Venue>,
-    modifier: Modifier = Modifier,
-    favorites: Set<String> = emptySet(),
-    onFavoriteToggle: (String) -> Unit,
+	venues: List<Venue>,
+	modifier: Modifier = Modifier,
+	favorites: Set<String> = emptySet(),
+	onFavoriteToggle: (String) -> Unit,
 ) {
-    val listState = rememberLazyListState()
+	val listState = rememberLazyListState()
 
-    LazyColumn(
-        state = listState,
-        modifier = modifier,
-        contentPadding = PaddingValues(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-    ) {
-        items(
-            items = venues,
-            key = { it.id },
-            contentType = { it }, // Helps with item animations
-        ) { venue ->
-            // Each item gets its own animation
-            AnimatedVisibility(
-                visible = true,
-                enter = fadeIn() + slideInVertically(),
-                exit = fadeOut() + slideOutVertically(),
-                modifier = Modifier.animateItem(),
-            ) {
-                VenueCard(
-                    venue = venue,
-                    isFavorite = venue.id in favorites,
-                    onFavoriteToggle = onFavoriteToggle,
-                )
-            }
-        }
-    }
+	LazyColumn(
+		state = listState,
+		modifier = modifier,
+		contentPadding = PaddingValues(8.dp),
+		verticalArrangement = Arrangement.spacedBy(8.dp),
+	) {
+		items(
+			items = venues,
+			key = { it.id },
+			contentType = { it }, // Helps with item animations
+		) { venue ->
+			// Each item gets its own animation
+			AnimatedVisibility(
+				visible = true,
+				enter = fadeIn() + slideInVertically(),
+				exit = fadeOut() + slideOutVertically(),
+				modifier = Modifier.animateItem(),
+			) {
+				VenueCard(
+					venue = venue,
+					isFavorite = venue.id in favorites,
+					onFavoriteToggle = onFavoriteToggle,
+				)
+			}
+		}
+	}
 }

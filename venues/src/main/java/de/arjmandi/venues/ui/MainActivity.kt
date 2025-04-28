@@ -14,34 +14,37 @@ import androidx.compose.ui.tooling.preview.Preview
 import de.arjmandi.venues.ui.theme.Venuesv2Theme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Venuesv2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		enableEdgeToEdge()
+		setContent {
+			Venuesv2Theme {
+				Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+					Greeting(
+						name = "Android",
+						modifier = Modifier.padding(innerPadding),
+					)
+				}
+			}
+		}
+	}
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Greeting(
+	name: String,
+	modifier: Modifier = Modifier,
+) {
+	Text(
+		text = "Hello $name!",
+		modifier = modifier,
+	)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    Venuesv2Theme {
-        Greeting("Android")
-    }
+	Venuesv2Theme {
+		Greeting("Android")
+	}
 }

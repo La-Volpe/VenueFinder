@@ -17,56 +17,56 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun FlashingFirstCharacterText(
-    text: String,
-    modifier: Modifier = Modifier,
-    flashingDuration: Int = 100, // ms
+	text: String,
+	modifier: Modifier = Modifier,
+	flashingDuration: Int = 100, // ms
 ) {
-    var isVisible by remember { mutableStateOf(true) }
+	var isVisible by remember { mutableStateOf(true) }
 
-    // Timer to toggle visibility every 100ms
-    LaunchedEffect(Unit) {
-        while (true) {
-            delay(flashingDuration.toLong())
-            isVisible = !isVisible
-        }
-    }
+	// Timer to toggle visibility every 100ms
+	LaunchedEffect(Unit) {
+		while (true) {
+			delay(flashingDuration.toLong())
+			isVisible = !isVisible
+		}
+	}
 
-    // Split the first grapheme cluster (emoji-aware)
-    val (firstChar, remainingText) =
-        remember(text) {
-            if (text.isEmpty()) {
-                Pair("", "")
-            } else {
-                val firstGrapheme =
-                    text
-                        .takeWhile {
-                            // Ensure we capture the full emoji (including modifiers)
-                            it.isEmojiPart()
-                        }.ifEmpty { text.take(1) }
-                Pair(firstGrapheme, text.substring(firstGrapheme.length))
-            }
-        }
+	// Split the first grapheme cluster (emoji-aware)
+	val (firstChar, remainingText) =
+		remember(text) {
+			if (text.isEmpty()) {
+				Pair("", "")
+			} else {
+				val firstGrapheme =
+					text
+						.takeWhile {
+							// Ensure we capture the full emoji (including modifiers)
+							it.isEmojiPart()
+						}.ifEmpty { text.take(1) }
+				Pair(firstGrapheme, text.substring(firstGrapheme.length))
+			}
+		}
 
-    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-        AnimatedVisibility(
-            visible = isVisible,
-            enter = fadeIn(),
-            exit = fadeOut(),
-        ) {
-            Text(
-                text = firstChar,
-            )
-        }
-        Text(remainingText)
-    }
+	Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
+		AnimatedVisibility(
+			visible = isVisible,
+			enter = fadeIn(),
+			exit = fadeOut(),
+		) {
+			Text(
+				text = firstChar,
+			)
+		}
+		Text(remainingText)
+	}
 }
 
 // Helper to check if a character is part of an emoji sequence
 private fun Char.isEmojiPart(): Boolean =
-    when (this.category) {
-        CharCategory.SURROGATE,
-        CharCategory.OTHER_SYMBOL,
-        CharCategory.MODIFIER_SYMBOL,
-        -> true
-        else -> false
-    }
+	when (this.category) {
+		CharCategory.SURROGATE,
+		CharCategory.OTHER_SYMBOL,
+		CharCategory.MODIFIER_SYMBOL,
+		-> true
+		else -> false
+	}

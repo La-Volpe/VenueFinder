@@ -8,18 +8,18 @@ import org.junit.Before
 import kotlin.test.Test
 
 class ToggleFavoriteUseCaseTest {
+	private val favoriteRepository: FavoriteRepository = mockk(relaxed = true)
+	private lateinit var useCase: ToggleFavoriteUseCase
 
- private val favoriteRepository: FavoriteRepository = mockk(relaxed = true)
- private lateinit var useCase: ToggleFavoriteUseCase
+	@Before
+	fun setup() {
+		useCase = ToggleFavoriteUseCase(favoriteRepository)
+	}
 
- @Before
- fun setup() {
-  useCase = ToggleFavoriteUseCase(favoriteRepository)
- }
-
- @Test
- fun `toggles favorite state`() = runTest {
-  useCase("venue123")
-  coVerify { favoriteRepository.toggleFavorite("venue123") }
- }
+	@Test
+	fun `toggles favorite state`() =
+		runTest {
+			useCase("venue123")
+			coVerify { favoriteRepository.toggleFavorite("venue123") }
+		}
 }
