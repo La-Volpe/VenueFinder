@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -41,6 +42,7 @@ fun VenuesScreenContent(
 	currentLocation: Location?,
 	modifier: Modifier = Modifier,
 	favorites: Set<String> = emptySet(),
+	onRetry: () -> Unit = {},
 	onFavoriteToggle: (String) -> Unit = {},
 ) {
 	val locationName by remember(uiState) {
@@ -64,7 +66,7 @@ fun VenuesScreenContent(
 				title = {
 					when (uiState) {
 						is VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
-						is VenuesUiState.Error -> FlashingFirstCharacterText(locationName)
+						is VenuesUiState.Error -> Text(" Error Loading Venues!")
 						is VenuesUiState.Success -> {
 							Text(
 								text = locationName,
@@ -125,6 +127,9 @@ fun VenuesScreenContent(
 								text = targetState.message,
 								color = MaterialTheme.colorScheme.error,
 							)
+							Button(onClick = { onRetry() }) {
+								Text("Retry")
+							}
 						}
 					}
 				}
