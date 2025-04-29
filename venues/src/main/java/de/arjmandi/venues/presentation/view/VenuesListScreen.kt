@@ -23,7 +23,7 @@ fun VenuesListScreen(viewModel: VenuesListViewModel) {
 			uiState.errorMessage != null -> VenuesUiState.Error(uiState.errorMessage ?: "Unknown error")
 			else -> VenuesUiState.Success(uiState.venues)
 		},
-		currentLocation = uiState.location?.let { Location(it.first, it.second) },
+		currentLocation = uiState.location,
 		favorites = uiState.favoriteVenueIds,
 		onFavoriteToggle = { viewModel.toggleFavorites(it) },
 	)

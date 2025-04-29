@@ -7,18 +7,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class LocationRepositoryImpl : LocationRepository {
-	private val locations =
-		Location.coordinates.map {
-			it.latitude to it.longitude
-		}
 
-	override val locationFlow: Flow<Pair<Double, Double>> =
+	override val locationFlow: Flow<Location> =
 		flow {
 			var index = 0
 			while (true) {
-				emit(locations[index])
+				emit(Location.coordinates[index])
 				delay(10_000)
-				index = (index + 1) % locations.size
+				index = (index + 1) % Location.coordinates.size
 			}
 		}
 }

@@ -1,7 +1,8 @@
 package de.arjmandi.venues.domain.repository
 
+import de.arjmandi.venues.domain.model.Location
 import kotlinx.coroutines.flow.Flow
 
 interface LocationRepository {
-	val locationFlow: Flow<Pair<Double, Double>>
+	val locationFlow: Flow<Location>
 }

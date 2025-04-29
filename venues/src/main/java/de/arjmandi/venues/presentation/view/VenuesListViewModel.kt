@@ -2,6 +2,7 @@ package de.arjmandi.venues.presentation.view
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.presentation.model.VenuesListUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -32,17 +33,14 @@ class VenuesListViewModel(
 				location to favorites
 			}.collectLatest { (location, favorites) ->
 				_uiState.update { it.copy(location = location, favoriteVenueIds = favorites, isLoading = true) }
-				fetchVenues(location.first, location.second)
+				fetchVenues(location)
 			}
 		}
 	}
 
-	private suspend fun fetchVenues(
-		lat: Double,
-		lon: Double,
-	) {
+	private suspend fun fetchVenues(location: Location) {
 		context
-			.getVenues(lat, lon)
+			.getVenues(location.latitude, location.latitude)
 			.onEach { venues ->
 				_uiState.update { it.copy(venues = venues, isLoading = false, errorMessage = null) }
 			}.catch { e ->
