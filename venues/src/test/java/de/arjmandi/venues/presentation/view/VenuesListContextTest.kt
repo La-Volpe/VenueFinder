@@ -8,85 +8,135 @@ import de.arjmandi.venues.domain.usecase.ObserveLocationUpdatesUseCase
 import de.arjmandi.venues.domain.usecase.ToggleFavoriteUseCase
 import io.mockk.coEvery
 import io.mockk.coVerify
+import io.mockk.every
+import io.mockk.just
 import io.mockk.mockk
+import io.mockk.runs
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertEquals
 
-@OptIn(ExperimentalCoroutinesApi::class)
+@ExperimentalCoroutinesApi
 class VenuesListContextTest {
-	private val locationsChange = mockk<ObserveLocationUpdatesUseCase>()
-	private val getNearbyVenues = mockk<GetVenuesForLocationUseCase>()
-	private val toggleFavoriteUseCase = mockk<ToggleFavoriteUseCase>()
-	private val getFavoritedVenuesUseCase = mockk<GetFavoritedVenuesUseCase>()
 
 	private lateinit var context: VenuesListContext
+	private val observeLocationUpdates: ObserveLocationUpdatesUseCase = mockk()
+	private val getNearbyVenues: GetVenuesForLocationUseCase = mockk()
+	private val toggleFavoriteUseCase: ToggleFavoriteUseCase = mockk()
+	private val getFavoritedVenuesUseCase: GetFavoritedVenuesUseCase = mockk()
 
 	@Before
 	fun setup() {
-		context =
-			VenuesListContext(
-				locationsChange = locationsChange,
-				getNearbyVenues = getNearbyVenues,
-				toggleFavorite = toggleFavoriteUseCase,
-				getFavoritedVenues = getFavoritedVenuesUseCase,
-			)
+		// Configure the ObserveLocationUpdatesUseCase to return a flow of locations
+		val expectedLocation = Location(60.169418, 24.931618, "Kamppi Chapel of Silence")
+		every { observeLocationUpdates() } returns flowOf(expectedLocation)
+
+		// Configure the ToggleFavoriteUseCase to handle any string input
+		coEvery { toggleFavoriteUseCase(any()) } just runs
+
+		context = VenuesListContext(
+			observeLocationUpdates = observeLocationUpdates,
+			getNearbyVenues = getNearbyVenues,
+			toggleFavoriteUseCase = toggleFavoriteUseCase,
+			getFavoritedVenuesUseCase = getFavoritedVenuesUseCase,
+		)
 	}
 
 	@Test
-	fun observeLocationChanges_withLocationAndVenues_updatesLocationAndVenuesState() =
-		runTest {
-			// Arrange
-			val targetIndex = 1
-			val coord = Location.coordinates[targetIndex]
-			val venue = Venue("v1", "Name", "Desc", "url")
-			coEvery { locationsChange.invoke() } returns flowOf(coord.latitude to coord.longitude)
-			coEvery { getNearbyVenues.invoke(coord.latitude, coord.longitude) } returns flowOf(listOf(venue))
+	fun `locationFlow should return flow from observeLocationUpdates use case`() = runTest {
+		// Given
+		val expectedLocation = Location(60.169418, 24.931618, "Kamppi Chapel of Silence")
+		every { observeLocationUpdates() } returns flowOf(expectedLocation)
 
-			// Act
-			val job = launch { context.observeLocationChanges() }
-			advanceUntilIdle()
+		// When
+		val result = context.locationFlow
 
-			// Assert
-			assertEquals(coord, context.currentLocation.value)
-			assertEquals(listOf(venue), context.venuesListState.value)
-
-			job.cancel()
+		// Then
+		result.collect { location ->
+			assertEquals(expectedLocation, location)
 		}
+	}
 
 	@Test
-	fun observeFavorites_withFavorites_updatesFavoriteState() =
-		runTest {
-			// Arrange
-			val favorites = setOf("v1")
-			coEvery { getFavoritedVenuesUseCase.invoke() } returns flowOf(favorites)
+	fun `getVenues should delegate to getNearbyVenues use case`() = runTest {
+		// Given
+		val lat = 60.169418
+		val lon = 24.931618
+		val expectedVenues = listOf(
+			Venue("1", "Venue 1", "Description 1", "image1", false),
+			Venue("2", "Venue 2", "Description 2", "image2", false),
+		)
+		coEvery { getNearbyVenues(lat, lon) } returns flowOf(expectedVenues)
 
-			// Act
-			val job = launch { context.observeFavorites() }
-			advanceUntilIdle()
+		// When
+		val result = context.getVenues(lat, lon)
 
-			// Assert
-			assertEquals(favorites, context.favoriteVenuesState.value)
-
-			job.cancel()
+		// Then
+		result.collect { venues ->
+			assertEquals(expectedVenues, venues)
 		}
+	}
 
 	@Test
-	fun toggleFavorite_withValidVenueId_invokesUseCase() =
-		runTest {
-			// Arrange
-			val id = "v1"
-			coEvery { toggleFavoriteUseCase.invoke(id) } returns Unit
+	fun `favoritesFlow should delegate to getFavoritedVenuesUseCase`() = runTest {
+		// Given
+		val expectedFavorites = setOf("venue1", "venue2")
+		coEvery { getFavoritedVenuesUseCase() } returns flowOf(expectedFavorites)
 
-			// Act
-			context.toggleFavorite(id)
+		// When
+		val result = context.favoritesFlow()
 
-			// Assert
-			coVerify(exactly = 1) { toggleFavoriteUseCase.invoke(id) }
+		// Then
+		result.collect { favorites ->
+			assertEquals(expectedFavorites, favorites)
 		}
+	}
+
+	@Test
+	fun `toggleFavorite should delegate to toggleFavoriteUseCase`() = runTest {
+		// Given
+		val venueId = "venue123"
+		coEvery { toggleFavoriteUseCase(venueId) } just runs
+
+		// When
+		context.toggleFavorite(venueId)
+
+		// Then
+		coVerify { toggleFavoriteUseCase(venueId) }
+	}
+
+	@Test
+	fun `getVenues should handle invalid latitude and longitude inputs`() = runTest {
+		// Given
+		val invalidLat = 91.0 // Invalid latitude value
+		val invalidLon = 181.0 // Invalid longitude value
+
+		coEvery { getNearbyVenues(invalidLat, invalidLon) } returns flowOf(emptyList())
+
+		// When
+		val venues = context.getVenues(invalidLat, invalidLon)
+
+		// Then
+		venues.collect { result ->
+			assertTrue(result.isEmpty())
+		}
+	}
+
+	@Test
+	fun `favoritesFlow should handle empty or null data`() = runTest {
+		// Given
+		coEvery { getFavoritedVenuesUseCase() } returns flowOf(setOf())
+
+		// When
+		val result = context.favoritesFlow()
+
+		// Then
+		result.collect { favorites ->
+			assertTrue(favorites.isEmpty())
+		}
+	}
 }
