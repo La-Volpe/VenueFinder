@@ -24,6 +24,7 @@ fun VenuesListScreen(viewModel: VenuesListViewModel) {
 		},
 		currentLocation = uiState.location,
 		favorites = uiState.favoriteVenueIds,
+		onRetry = viewModel.retry(),
 		onFavoriteToggle = { viewModel.toggleFavorites(it) },
 	)
 }

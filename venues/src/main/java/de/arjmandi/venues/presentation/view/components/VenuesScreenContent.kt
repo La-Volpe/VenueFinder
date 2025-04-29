@@ -45,13 +45,13 @@ fun VenuesScreenContent(
 	onRetry: () -> Unit = {},
 	onFavoriteToggle: (String) -> Unit = {},
 ) {
-	val locationName by remember(uiState) {
+	val headerText by remember(uiState) {
 		derivedStateOf {
 			when (uiState) {
 				is VenuesUiState.Success -> {
 					"📍 ${currentLocation?.displayName}"
 				}
-				is VenuesUiState.Error -> "📍 Error location"
+				is VenuesUiState.Error -> "📍 Error Loading location"
 				VenuesUiState.Loading -> "📍 Loading location..."
 			}
 		}
@@ -65,11 +65,11 @@ fun VenuesScreenContent(
 			TopAppBar(
 				title = {
 					when (uiState) {
-						is VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
-						is VenuesUiState.Error -> Text(" Error Loading Venues!")
+						is VenuesUiState.Loading -> FlashingFirstCharacterText(headerText)
+						is VenuesUiState.Error -> Text("\uD83D\uDD34 Error Loading Venues!")
 						is VenuesUiState.Success -> {
 							Text(
-								text = locationName,
+								text = headerText,
 								style = MaterialTheme.typography.titleLarge,
 								maxLines = 1,
 								overflow = TextOverflow.Ellipsis,
@@ -123,10 +123,6 @@ fun VenuesScreenContent(
 							modifier = Modifier.fillMaxSize(),
 							contentAlignment = Alignment.Center,
 						) {
-							Text(
-								text = targetState.message,
-								color = MaterialTheme.colorScheme.error,
-							)
 							Button(onClick = { onRetry() }) {
 								Text("Retry")
 							}
