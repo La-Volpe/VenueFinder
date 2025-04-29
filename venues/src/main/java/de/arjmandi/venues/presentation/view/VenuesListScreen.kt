@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import de.arjmandi.venues.domain.model.Location
 import de.arjmandi.venues.presentation.model.VenuesUiState
 import de.arjmandi.venues.presentation.view.components.VenuesScreenContent
 
