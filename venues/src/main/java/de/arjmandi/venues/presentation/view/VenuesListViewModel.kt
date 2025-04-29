@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -26,14 +25,15 @@ class VenuesListViewModel(
 
 	private fun observeLocationAndFavorites() {
 		viewModelScope.launch {
-			combine(
-				context.locationFlow,
-				context.favoritesFlow(),
-			) { location, favorites ->
-				location to favorites
-			}.collectLatest { (location, favorites) ->
-				_uiState.update { it.copy(location = location, favoriteVenueIds = favorites, isLoading = true) }
+			context.locationFlow.collectLatest { location ->
+				_uiState.update { it.copy(location = location, isLoading = true) }
 				fetchVenues(location)
+			}
+		}
+
+		viewModelScope.launch {
+			context.favoritesFlow().collectLatest { favorites ->
+				_uiState.update { it.copy(favoriteVenueIds = favorites) }
 			}
 		}
 	}
