@@ -40,7 +40,7 @@ class VenuesListViewModel(
 
 	private suspend fun fetchVenues(location: Location) {
 		context
-			.getVenues(location.latitude, location.latitude)
+			.getVenues(location.latitude, location.longitude)
 			.onEach { venues ->
 				_uiState.update { it.copy(venues = venues, isLoading = false, errorMessage = null) }
 			}.catch { e ->
