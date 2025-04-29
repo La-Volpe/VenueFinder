@@ -1,48 +1,68 @@
-## Architecture
+# Notes
 
-Our implementation will keep the module small and ensure clean flow of data and ensure separation of concerns, testablity and maintainability of the code.
+## Architecture Overview
 
-We break down the `Venues` feature module into the following layers:
+The project follows a **modular Clean Architecture** with separation into:
+- **Data Layer**:
+  - `VenueRemoteDataSource` communicates with the remote API using Ktor.
+  - `FavoriteDao` manages local Room database access.
+- **Domain Layer**:
+  - Business logic is encapsulated in Use Cases (`GetVenuesForLocationUseCase`, `ToggleFavoriteUseCase`, etc.).
+  - Entities and repository interfaces are defined here.
+- **Presentation Layer**:
+  - Compose UI with ViewModel-backed state management.
+  - Venue listing UI reacting to location updates and favorites state.
 
-### Domain
+## Technologies Used
+- **Jetpack Compose** for UI
+- **Koin** for Dependency Injection
+- **Ktor** for Networking
+- **Room** for Local Database (with KSP)
+- **Kotlinx Serialization** for JSON parsing
+- **Turbine**, **MockK**, **JUnit5** for testing
+- **Gradle Version Catalogs** and **KTS** scripting
 
-* **Entities**:
-  * `Venue`: id, name, shortDescription, imageUrl, isFavorite (local state)
-* **Use Cases**:
-  * `GetVenuesForLocationUseCase`: Fetch venues given a latitude and longitude.
-  * `ToggleFavoriteUseCase`: Toggle favorite state for a venue.
-  * `ObserveLocationUpdatesUseCase`: Provide location updates every 10 seconds.
-* **Repositories (interfaces)**:
-  * `VenueRepository`
-  * `LocationRepository`
-  * `FavoriteRepository`
+---
 
-### **Data Layer** (Data Sources & Implementations)
+## Known Limitations and Trade-offs
 
-* **Remote Data Source**:
-  * `VenueRemoteDataSource`: Calls the Wolt API.
-* **Local Data Source**:
-  * `FavoriteLocalDataSource`: Stores favorite venue IDs locally (Room or DataStore).
-* **Repository Implementations**:
-  * `VenueRepositoryImpl`: Combines remote fetching with favorite state.
-  * `FavoriteRepositoryImpl`: Manages local favorite persistence.
-  * `LocationRepositoryImpl`: Emits pre-defined location list with 10-second interval looping.
+- **Favorites Management**:
+  - Current implementation checks favorites by loading the entire list (`getAllFavorites()`).
+  - Acceptable for small datasets.
+  - Would not scale efficiently; ideally `SELECT EXISTS` queries or in-memory caching should be added if needed.
 
-### **Presentation Layer** (UI, ViewModels)
+- **MockEngine Duplication in Tests**:
+  - Some unit tests recreate MockEngine/HttpClient setup individually.
+  - For simplicity and scope, no base test setup abstraction was made.
 
-* **ViewModel**:
-  * `VenueListViewModel`:
-    * Observe venues list.
-    * Handle location updates.
-    * Handle toggle favorite.
-    * Handle loading/error states if necessary.
-* **UI**:
-  * **Screen**:
-    * Venue list displayed with a nice transition animation on data refresh.
-  * **Components**:
-    * `VenueItem`: Displays name, description, image, favorite button.
-    * Smooth transition for list updates (using** **`LazyColumn`,** **`AnimatedContent`, etc.)
+- **Room Query Approach**:
+  - `Flow<List<FavoriteEntity>>` is returned instead of more optimized structures (`Set<String>`, etc.).
+  - Fine for assignment size, but optimization would be required for large datasets.
 
-#### Finally the dependency flow would look like this:
+- **No Pagination on Favorites**:
+  - Full favorites list is fetched without pagination.
+  - Reasonable for the expected low number of entries.
 
-UI -> ViewModel -> UseCase -> Repository -> DataSource
+- **Allowing Main Thread Queries in Tests**:
+  - Main-thread queries are allowed for faster and simpler test execution.
+  - Would need stricter thread handling in a production-grade application.
+
+---
+
+## Testing Strategy
+
+- **Unit Tests** for each layer:
+  - Repositories
+  - UseCases
+  - ViewModels
+- **Integration Tests** with Room in-memory database.
+- **RemoteDataSource Tests** using Ktor's MockEngine to simulate API responses.
+
+---
+
+## Project Setup
+
+1. Requires **Android Studio Hedgehog (or newer)**.
+2. Clone the repository and open it.
+3. Build using Gradle — no manual steps needed.
+4. Run tests with `./gradlew test` or directly from the IDE.
