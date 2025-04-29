@@ -43,12 +43,14 @@ fun VenuesScreenContent(
 	favorites: Set<String> = emptySet(),
 	onFavoriteToggle: (String) -> Unit = {},
 ) {
-	val locationName by remember(currentLocation) {
+	val locationName by remember(uiState) {
 		derivedStateOf {
 			when (uiState) {
-				is VenuesUiState.Success -> "\uD83D\uDCCD ${currentLocation?.displayName}"
-				is VenuesUiState.Error -> "\uD83D\uDCCD Error location"
-				VenuesUiState.Loading -> "\uD83D\uDCCD Loading location..."
+				is VenuesUiState.Success -> {
+					"📍 ${currentLocation?.displayName}"
+				}
+				is VenuesUiState.Error -> "📍 Error location"
+				VenuesUiState.Loading -> "📍 Loading location..."
 			}
 		}
 	}
@@ -61,13 +63,16 @@ fun VenuesScreenContent(
 			TopAppBar(
 				title = {
 					when (uiState) {
-						VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
-						else ->
+						is VenuesUiState.Loading -> FlashingFirstCharacterText(locationName)
+						is VenuesUiState.Error -> FlashingFirstCharacterText(locationName)
+						is VenuesUiState.Success -> {
 							Text(
 								text = locationName,
+								style = MaterialTheme.typography.titleLarge,
 								maxLines = 1,
 								overflow = TextOverflow.Ellipsis,
 							)
+						}
 					}
 				},
 			)
@@ -126,14 +131,6 @@ fun VenuesScreenContent(
 			}
 		}
 	}
-}
-
-@Composable
-private fun FlashingFirstCharacterText(text: String) {
-	Text(
-		text = text,
-		style = MaterialTheme.typography.titleLarge,
-	)
 }
 
 @OptIn(ExperimentalFoundationApi::class)
