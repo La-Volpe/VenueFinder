@@ -1,11 +1,10 @@
-# Wolt Mobile app assignment
-## Notes from the applicant
+# Mobile app assignment
 
-Please see the NOTES.md file
+Please see the [NOTES.md](https://github.com/La-Volpe/wolt-android-task/blob/my-implementation-v2/NOTES.md) and [QA Notes](https://github.com/La-Volpe/wolt-android-task/blob/my-implementation-v2/QA-CHECKLIST.md) for more on the project.
 
 ## Concept
 
-A user is walking around the Helsinki city center looking for a place to eat.
+Helping a user walking around the Helsinki city center looking for a place to eat using Wolt's search.
 
 ## Task
 
@@ -57,35 +56,3 @@ Create an application that performs the following functions:
 - `60.168254, 24.931532`
 - `60.169012, 24.930341`
 - `60.170085, 24.929569`
-
-## Example Assets
-
-- [Favorite (true)](https://fonts.google.com/icons?selected=Material+Icons:favorite) ![Favorite Icon](/assets/favorite_icon.svg)
-- [Favorite (false)](https://fonts.google.com/icons?selected=Material+Icons:favorite_border) ![Unfavorite Icon](/assets/favorite_border_icon.svg)
-
-## Example of Minimal Design
-
-![Minimal Design Example](./assets/minimal_design.png)
-
-## How to do it in practice
-
-1. Clone this repository
-2. Checkout a new branch git checkout -b my-implementation
-3. Implement your solution and push the changes to your branch
-4. Once you're done
-    1. Open a PR (pull request). Feel free to add comments in the PR.
-    2. Inform the recruiter that you've finished the assignment
-
-## What we appreciate as reviewers
-
-We value your effort in developing a feature-ready and fully functional submission for release, which we expect to be well-structured, clean code of good quality, testable and reactive, with some test coverage, as well as incorporating creative and well-designed UI/UX elements including some animation, mirroring how real product features are developed
-
-## FAQ
-
-**Does my app need to support different screen orientations?**
-
-No, portrait mode is sufficient.
-
-**Do I need to strictly follow the design example?**
-
-The provided mockup is just a suggestion. Feel free to design the UI your own way as long as it contains the same information.
