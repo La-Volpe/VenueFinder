@@ -1,0 +1,884 @@
+[
+  {
+    "coords": [
+      60.169418,
+      24.931618
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Taco Bell Tennispalatsi",
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.169818,
+      24.932906
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      {
+        "name": "Bastard Burgers Mikonkatu",
+        "short_description": "Like a Bastard™",
+        "id": "6348098a9157ab2b10bdaf65",
+        "image_url": "https://imageproxy.wolt.com/assets/673206ee63ae2357e7f7b394"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.170005,
+      24.935105
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      {
+        "name": "Putte's Bar & Pizza",
+        "short_description": "Artesaanipizzaa rakkaudella",
+        "id": "5507eb41747daa760d2af27c",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb1f89eb96f4520c3dc"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.169108,
+      24.93621
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      {
+        "name": "Putte's Bar & Pizza",
+        "short_description": "Artesaanipizzaa rakkaudella",
+        "id": "5507eb41747daa760d2af27c",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb1f89eb96f4520c3dc"
+      },
+      {
+        "name": "Bastard Burgers Mikonkatu",
+        "short_description": "Like a Bastard™",
+        "id": "6348098a9157ab2b10bdaf65",
+        "image_url": "https://imageproxy.wolt.com/assets/673206ee63ae2357e7f7b394"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.168355,
+      24.934869
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      {
+        "name": "Noodle Story Freda",
+        "short_description": "Fresh homemade noodles",
+        "id": "62bc5c0d4a41e8af8002f3fd",
+        "image_url": "https://imageproxy.wolt.com/assets/6732636ff45db57ef60070cf"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.16756,
+      24.932562
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Taco Bell Tennispalatsi",
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.168254,
+      24.931532
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Taco Bell Tennispalatsi",
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.169012,
+      24.930341
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Taco Bell Tennispalatsi",
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      }
+    ]
+  },
+  {
+    "coords": [
+      60.170085,
+      24.929569
+    ],
+    "venues": [
+      {
+        "name": "McDonald's Helsinki Kamppi",
+        "short_description": "I'm lovin' it.",
+        "id": "5ae6013cf78b5a000bb64022",
+        "image_url": "https://imageproxy.wolt.com/assets/6735be5986f45b72713e2129"
+      },
+      {
+        "name": "Hesburger Helsinki Pasila Tripla",
+        "short_description": "Herkulliset hampurilaiset & tortillat",
+        "id": "67c571f5dafd795cde3f22e1",
+        "image_url": "https://imageproxy.wolt.com/assets/67ea79d8e3aca1debaea9cf4"
+      },
+      {
+        "name": "Burger King Citycenter",
+        "short_description": "Liekillä grillatut hampurilaiset",
+        "id": "67039d617b34437fa839f85b",
+        "image_url": "https://imageproxy.wolt.com/assets/67335f048c35d92f799b8a8d"
+      },
+      {
+        "name": "Subway Iso Roobertinkatu",
+        "short_description": "Parhaat hetket ovat edessä.",
+        "id": "561e29316d475308275d6854",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fbe827209684f08e384"
+      },
+      {
+        "name": "Cafe Korvari",
+        "short_description": "Breakfast in Töölö or freshly baked cinnamon roll, also home-delivered!",
+        "id": "6411b53cc19783bc82b1d7cc",
+        "image_url": "https://imageproxy.wolt.com/assets/67321485a94945236d40b6ff"
+      },
+      {
+        "name": "Pizzakuningas Pasila",
+        "short_description": "Kuningas pizzaa ja kebabia!",
+        "id": "661933b4a8a2d509c33d0f53",
+        "image_url": "https://imageproxy.wolt.com/assets/6735bf10644b107941dc6fc2"
+      },
+      {
+        "name": "King's Pizza",
+        "short_description": "Vönerit ja vegaanipizzat",
+        "id": "66262b2273278067c6a544fc",
+        "image_url": "https://imageproxy.wolt.com/assets/673330473bdb662b380907f3"
+      },
+      {
+        "name": "Kuningas Wings",
+        "short_description": "Maistuvat siivet ja kana-annokset!",
+        "id": "66262b834ce3815d6efa5df1",
+        "image_url": "https://imageproxy.wolt.com/assets/6733303da7cc62434f9d8eed"
+      },
+      {
+        "name": "McDonald's Helsinki Forum Katutaso",
+        "short_description": "I'm lovin' it",
+        "id": "5ae605a7349077000b1f5ef4",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fcc40111921ceedb4f3"
+      },
+      {
+        "name": "Taco Bell Tennispalatsi",
+        "short_description": "Meksikolainen pikaruokaravintola",
+        "id": "5cc175b2daaaee24fdbb92ee",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fd1c59f3326de5434ed"
+      },
+      {
+        "name": "Eat Poke Kamppi",
+        "short_description": "Helsingin ensimmäinen kokonaan poke-kulhoille omistettu ravintola",
+        "id": "5f16ec0be0c7486ca166bf37",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb8ac5de37683d5df8c"
+      },
+      {
+        "name": "Friends & Brgrs Helsinki",
+        "short_description": "Maailman parasta kotimaista",
+        "id": "5cf625dde24129e12f1ec781",
+        "image_url": "https://imageproxy.wolt.com/assets/67332fb7f45db57ef600c26c"
+      },
+      {
+        "name": "Joe & The Juice Kamppi",
+        "short_description": "Smoothie- ja mehubaari",
+        "id": "67cad7f4315e6740072a4950",
+        "image_url": "https://imageproxy.wolt.com/assets/67cad8fe575a8961d3ed5bcf"
+      },
+      {
+        "name": "Lie Mi Bulevardi",
+        "short_description": "Delicious Vietnamese food",
+        "id": "5f63398ebf5f998290b463d5",
+        "image_url": "https://imageproxy.wolt.com/assets/6732140b308c8149ae82f2cc"
+      },
+      {
+        "name": "Siipiweikot Kamppi",
+        "short_description": "Legendaarisen herkulliset siivet & lisukkeet",
+        "id": "654233aa4cc25505e8ce1bff",
+        "image_url": "https://imageproxy.wolt.com/assets/673208c8479a971266a698b3"
+      }
+    ]
+  }
+]
