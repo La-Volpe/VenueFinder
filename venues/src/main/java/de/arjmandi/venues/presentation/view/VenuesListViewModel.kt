@@ -31,16 +31,17 @@ class VenuesListViewModel(
 	}
 
 	private fun observeLocationAndFavorites() {
-		job = viewModelScope.launch {
-			context
-				.locationFlow
-				.cancellable()
-				.filter { !isPaused.value }
-				.collectLatest { location ->
-					_uiState.update { it.copy(location = location, isLoading = true) }
-					fetchVenues(location)
-				}
-		}
+		job =
+			viewModelScope.launch {
+				context
+					.locationFlow
+					.cancellable()
+					.filter { !isPaused.value }
+					.collectLatest { location ->
+						_uiState.update { it.copy(location = location, isLoading = true) }
+						fetchVenues(location)
+					}
+			}
 
 		viewModelScope.launch {
 			context.favoritesFlow().collectLatest { favorites ->
@@ -67,8 +68,9 @@ class VenuesListViewModel(
 		}
 	}
 
-	fun retry(): () -> Unit = {
-		_isPaused.value = false
-		observeLocationAndFavorites()
-	}
+	fun retry(): () -> Unit =
+		{
+			_isPaused.value = false
+			observeLocationAndFavorites()
+		}
 }
