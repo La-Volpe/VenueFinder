@@ -18,8 +18,8 @@ class VenuesApplication : Application() {
 	}
 
 	override fun onTerminate() {
+		super.onTerminate()
 		getKoin().get<CoroutineScope>().cancel()
 		stopKoin()
-		super.onTerminate()
 	}
 }
