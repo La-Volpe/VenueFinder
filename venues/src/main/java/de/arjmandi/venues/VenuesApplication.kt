@@ -16,6 +16,7 @@ class VenuesApplication : Application() {
 			modules(appModules)
 		}
 	}
+
 	override fun onTerminate() {
 		getKoin().get<CoroutineScope>().cancel()
 		stopKoin()

@@ -83,9 +83,10 @@ fun VenuesScreenContent(
 		},
 	) { innerPadding ->
 		Box(
-			modifier = Modifier
-				.padding(innerPadding)
-				.fillMaxSize(),
+			modifier =
+				Modifier
+					.padding(innerPadding)
+					.fillMaxSize(),
 		) {
 			// Always show the last successful venues if they exist
 			lastSuccessfulVenues?.let { venues ->
