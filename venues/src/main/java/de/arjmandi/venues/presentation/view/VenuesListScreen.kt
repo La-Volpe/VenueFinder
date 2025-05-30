@@ -17,11 +17,11 @@ fun VenuesListScreen(viewModel: VenuesListViewModel) {
 
 	VenuesScreenContent(
 		uiState =
-			when {
-				uiState.isLoading -> VenuesUiState.Loading
-				uiState.errorMessage != null -> VenuesUiState.Error(uiState.errorMessage ?: "Unknown error")
-				else -> VenuesUiState.Success(uiState.venues)
-			},
+		when {
+			uiState.isLoading -> VenuesUiState.Loading
+			uiState.errorMessage != null -> VenuesUiState.Error(uiState.errorMessage ?: "Unknown error")
+			else -> VenuesUiState.Success(uiState.venues)
+		},
 		currentLocation = uiState.location,
 		favorites = uiState.favoriteVenueIds,
 		onRetry = viewModel.retry(),

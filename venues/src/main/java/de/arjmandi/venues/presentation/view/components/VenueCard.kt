@@ -38,10 +38,10 @@ fun VenueCard(
 ) {
 	Card(
 		modifier =
-			Modifier
-				.padding(8.dp)
-				.fillMaxWidth()
-				.shadow(4.dp, shape = RoundedCornerShape(16.dp)),
+		Modifier
+			.padding(8.dp)
+			.fillMaxWidth()
+			.shadow(4.dp, shape = RoundedCornerShape(16.dp)),
 		shape = RoundedCornerShape(16.dp),
 	) {
 		Box {
@@ -50,20 +50,20 @@ fun VenueCard(
 				contentDescription = venue.name,
 				contentScale = ContentScale.Crop,
 				modifier =
-					Modifier
-						.fillMaxWidth()
-						.height(200.dp),
+				Modifier
+					.fillMaxWidth()
+					.height(200.dp),
 			)
 
 			IconButton(
 				onClick = { onFavoriteToggle(venue.id) },
 				modifier =
-					Modifier
-						.align(Alignment.TopEnd)
-						.padding(8.dp)
-						.size(36.dp)
-						.clip(CircleShape)
-						.background(MaterialTheme.colorScheme.surface),
+				Modifier
+					.align(Alignment.TopEnd)
+					.padding(8.dp)
+					.size(36.dp)
+					.clip(CircleShape)
+					.background(MaterialTheme.colorScheme.surface),
 			) {
 				Icon(
 					imageVector = if (isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
