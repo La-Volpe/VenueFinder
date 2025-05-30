@@ -24,6 +24,9 @@ import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.serialization.kotlinx.json.json
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.serialization.json.Json
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.dsl.viewModel
@@ -49,10 +52,13 @@ val dataModule =
 		}
 		single { get<AppDatabase>().favoriteDao() }
 
+		single<CoroutineScope> {
+			CoroutineScope(SupervisorJob() + Dispatchers.Default)
+		}
 		// Repository implementations
 		single<FavoriteRepository> { FavoriteRepositoryImpl(get()) }
 		single<VenueRepository> { VenueRepositoryImpl(get()) }
-		single<LocationRepository> { LocationRepositoryImpl() }
+		single<LocationRepository> { LocationRepositoryImpl(get<CoroutineScope>()) }
 
 		single {
 			HttpClient(CIO) {
